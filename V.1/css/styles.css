@@ -1,11 +1,13 @@
 
-:root {
     /* Colores de marca */
-    --primary-color: #fff133;
-    --secondary-color: #b3c700;
-    --background-color: #93ccf1;
-    --text-color: #080808f3;
-    --color-accent: #5e60b9;
+   :root {
+    --verde-ruta:#1E7A4F;
+    --naranja-pedal: #9a5a0d;
+    --azul-noche: #002574;
+    --crema: #875600;
+    --gris-asfalto: #1d2f45;
+    --background-color:#FAF6EF;
+    --text-color:#5B6470;
 
     /* Tipografías que se aplican al texto de la pagina */
     --font-family: "Open Sans", sans-serif;
@@ -16,7 +18,6 @@
     --espacio-mediano: 1rem;
     --espacio-grande: 2rem;
 }
-
 /* Estilos generales: se heredan en los elementos hijos */
 body {
     font-family: var(--font-family);
@@ -27,6 +28,11 @@ body {
     margin: 0;
     padding: var(--espacio-mediano);
 }
+    
+    section {
+        margin-bottom: var(--verde-ruta);
+    }
+  
 
 /* Un selector agrupado para todos los encabezados */
 h1,
@@ -37,7 +43,12 @@ h5,
 h6 {
     font-family: var(--font-family-heading);
     font-weight: 700;
-}
+    color:var(--azul-noche);}
+    a{ 
+        color: var(--verde-ruta);
+    }
+    
+
 
 /* Tablas con definiciones como grosor y tipo de tabla ,color */
 .tarifas,
@@ -61,3 +72,5 @@ h6 {
     padding: var(--espacio-pequeno);
     text-align: left;
 }
+
+
