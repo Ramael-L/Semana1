@@ -1,0 +1,76 @@
+/* Colores de marca */
+:root {
+    --verde-ruta: #1E7A4F;
+    --naranja-pedal: #9a5a0d;
+    --azul-noche: #002574;
+    --crema: #875600;
+    --gris-asfalto: #1d2f45;
+    --background-color: #FAF6EF;
+    --text-color: #5B6470;
+
+    /* Tipografías que se aplican al texto de la pagina */
+    --font-family: "Open Sans", sans-serif;
+    --font-family-heading: "Montserrat", sans-serif;
+
+    /* Escala de espaciado */
+    --espacio-pequeno: 0.5rem;
+    --espacio-mediano: 1rem;
+    --espacio-grande: 2rem;
+}
+
+/* Estilos generales: se heredan en los elementos hijos */
+body {
+    font-family: var(--font-family);
+    font-weight: 400;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: var(--espacio-mediano);
+}
+
+section {
+    margin-bottom: var(--verde-ruta);
+}
+
+
+/* Un selector agrupado para todos los encabezados */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-family-heading);
+    font-weight: 700;
+    color: var(--azul-noche);
+}
+
+a {
+    color: var(--verde-ruta);
+}
+
+
+
+/* Tablas con definiciones como grosor y tipo de tabla ,color */
+.tarifas,
+.tarifas-alquiler,
+.recorridos,
+.horarios {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tarifas th,
+.tarifas-alquiler td,
+.tarifas-alquiler th,
+.recorridos th,
+.tarifas td,
+.recorridos th,
+.recorridos td,
+.horarios th,
+.horarios td {
+    border: 3px solid var(--text-color);
+    padding: var(--espacio-pequeno);
+    text-align: left;
+}
