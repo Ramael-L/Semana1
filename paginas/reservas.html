@@ -16,12 +16,14 @@
                         <img src="../img/imagen4.png" alt="Imagen de Spongebob" width="200">
               
                         <nav>
-                            <ul>
-
-                             <li><a href="../index.html">Volver al inicio</a></li>
-                            <li><a href="tarifas.html">Ver tarifas y Rutas</a></li>
-                            </ul>
-                        </nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="reservas.html">Reservas</a></li>
+                <li><a href="tarifas.html">Tarifas y rutas</a></li>
+            </ul>
+                
+        
+        </nav>
 
         
             </header>
@@ -54,14 +56,14 @@
                 <td>11:00 a.m</td>
             </tr>
 
-            
+            <tr>
                 <th scope="row">Cierre</th>
                 <td>6:00 p.m</td>
                 <td>6:00 p.m</td>
                 <td>8:00 p.m</td>
                 <td>8:00 p.m</td>
-                    <td>8:00 p.m</td>
-
+                <td>8:00 p.m</td>
+            </tr>
                       </tbody>
 
             </table>
@@ -70,63 +72,134 @@
             <h2>Formulario de reservas</h2>
             <form action="" method="post">
              
-             <label for="nombre">Nombre Completo :</label>
-             <input type="text" id="nombre" name="nombre"placeholder="Nombre completo :D" minlength="4" required><br><br>    
-                
-                <label for="correo">Correo Electrónico :</label>
-                <input type="email" id="correo" name="correo" required ="Correo electrónico" required><br><br>
-                       
-                
-                <label for="documento">Documento de identidad :</label>
+             
+<form action="" method="post">
+    <div class="campo-formulario">
+        <label for="nombre">Nombre completo:</label>
+        <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            placeholder="Escribe tu nombre"
+            minlength="3"
+            required
+        >
+    </div> <br>
 
-                            <input type="text" id="documento" name="documento" required pattern="[0-9]{6,10}" title="Ingrese un numero de identidad válido"><br><br>
-                            <label for="telefono">Teléfono :</label>
+    <div class="campo-formulario">
+        <label for="correo">Correo electrónico:</label>
+        <input
+            type="email"
+            id="correo"
+            name="correo"
+            autocomplete="email"
+            required
+        >
+    </div><br>
 
-                                <input type="tel" id="telefono" name="telefono" required pattern="3[0-9]{9}" title="Ingrese un número de teléfono válido"><br><br>
-                                <label for="fecha">Fecha de reserva :</label>
-                                <input type="date" id="fecha" name="fecha" min="2026-11-01" max="2026-12-31" required><br><br>  
-                                
-                                    
-                                    <label for="hora">Hora de reserva :</label>
+    <div class="campo-formulario">
+        <label for="documento">Documento de identidad:</label>
+        <input
+            type="text"
+            id="documento"
+            name="documento"
+            pattern="[0-9]{6,10}"
+            title="Ingresa entre 6 y 10 dígitos"
+            required
+        >
+    </div><br>
 
-                                        <input type="time" id="hora" name="hora" required><br><br>
-                                        <label for="bicicleta">Tipo de bicicleta :</label>
+    <div class="campo-formulario">
+        <label for="telefono">Teléfono:</label>
+        <input
+            type="tel"
+            id="telefono"
+            name="telefono"
+            pattern="3[0-9]{9}"
+            title="Ingresa 10 dígitos y comienza por 3"
+            required
+        >
+    </div><br>
 
-                                        <label for="cantidad">Cantidad de bicicletas :</label>
-                                        <input type="number" id="cantidad" name="cantidad" min="1" max="6" required><br><br>
+    <div class="campo-formulario">
+        <label for="fecha">Fecha de reserva:</label>
+        <input
+            type="date"
+            id="fecha"
+            name="fecha"
+            min="2026-11-01"
+            max="2026-12-31"
+            required
+        >
+    </div><br>
 
-                                            <select id="bicicleta" name="bicicleta" required> 
-                                                <option value="urbana">Urbana</option>
-                                                <option value="montaña">Montaña</option>
-                                                <option value="eléctrica">Eléctrica</option>
-                                                    </select><br><br>
+    <div class="campo-formulario">
+        <label for="hora">Hora de reserva:</label>
+        <input type="time" id="hora" name="hora" required>
+    </div><br>
 
-                                                                    <p>Selecciona tu plan:</p>
+    <div class="campo-formulario">
+        <label for="bicicleta">Tipo de bicicleta:</label>
+        <select id="bicicleta" name="bicicleta" required>
+            <option value="">Selecciona una bicicleta</option>
+            <option value="urbana">Urbana</option>
+            <option value="montaña">Montaña</option>
+            <option value="eléctrica">Eléctrica</option>
+        </select>
+    </div><br>
 
-                                                                        <input type="radio" id="unaHora" name="plan" value="1 hora" required>
-                                                                            <label for="unaHora">1 hora</label>
+    <div class="campo-formulario">
+        <label for="cantidad">Cantidad de bicicletas:</label>
+        <input
+            type="number"
+            id="cantidad"
+            name="cantidad"
+            min="1"
+            max="6"
+            required
+        >
+    </div><br>
 
-                                                                                <input type="radio" id="medioDia" name="plan" value="medio día">
-                                                                                <label for="medioDia">Medio día (4 horas)</label>
+    <fieldset>
+        <legend>Selecciona tu plan:</legend>
 
-                                                                                    <input type="radio" id="diaCompleto" name="plan" value="día completo">
-                                                                                        <label for="diaCompleto">Día completo</label><br><br>
+        <label>
+            <input type="radio" name="plan" value="1 hora" required>
+            1 hora
+        </label>
 
-                                                                                             <label for="comentarios">Comentarios adicionales :</label><br>
-                                                                                                 <textarea id="comentarios" name="comentarios" rows="4" cols="50" placeholder="Escribe aquí tus comentarios o solicitudes especiales"></textarea><br><br>
+        <label>
+            <input type="radio" name="plan" value="medio día">
+            Medio día (4 horas)
+        </label>
 
-                                                                                                     <input type="checkbox" id="terminos" name="terminos" required>
-                                                                                                         <label for="terminos">Acepto los términos y condiciones</label><br><br>
+        <label>
+            <input type="radio" name="plan" value="día completo">
+            Día completo
+        </label>
+    </fieldset>
 
-                                                                                                             <input type="reset" value="Limpiar formulario">
-                                                                                                                     
+    <div class="campo-formulario">
+        <label for="comentarios">Comentarios adicionales:</label>
+        <textarea
+            id="comentarios"
+            name="comentarios"
+            rows="3"
+            maxlength="300"
+            placeholder="Escribe tus solicitudes especiales"
+        ></textarea>
+    </div><br>
 
+    <div class="campo-formulario">
+        <label>
+            <input type="checkbox" id="terminos" name="terminos" required>
+            Acepto los términos y condiciones
+        </label>
+    </div><br>
 
-                <input type="submit" value="Reservar">
-            </form>
-            
-
-
+    <button type="reset">Limpiar formulario</button>
+    <button type="submit">Reservar</button>
+</form>
 
                     
         </main>
