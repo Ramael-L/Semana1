@@ -299,6 +299,9 @@ footer {
         align-items: stretch;
         gap: var(--espacio-pequeno);
     }
+    nav a { 
+        width: 100%;
+    }
 }
 
 
