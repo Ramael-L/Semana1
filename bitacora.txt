@@ -1,150 +1,583 @@
-BITÁCORA — PROYECTO RUEDA LIBRE
-Versión 0.1
- Estructura inicial del proyecto
-Creé el proyecto Rueda Libre, un sitio web para el alquiler de bicicletas en Medellín. Organicé los archivos con un documento principal `index.html`, una carpeta `paginas/` para las páginas de tarifas y reservas, una carpeta `img/` para las imágenes y el archivo `bitacora.txt`.
-También inicialicé Git y conecté el proyecto con un repositorio público de GitHub llamado `rueda-libre`.
+# BITÁCORA — PROYECTO RUEDA LIBRE
 
-Análisis de la petición HTTP
-Abrí la página con Live Server y revisé la pestaña Network de las herramientas de desarrollador del navegador. Recargué la página y seleccioné la petición correspondiente al documento HTML.
+**Versión 0.1 — Registro del proceso de desarrollo**
 
-Datos de la petición:
+ Rueda Libre  
+ Sitio web para el alquiler de bicicletas, recorridos guiados y servicios relacionados en Medellín.
 
-1 URL completa:file:///c%3A/Users/Ramael/Desktop/RIWI/EJERCICIOS/SEMANA%201/rueda%20libre/Semana1/index.html 
-2 Protocolo: 
-3 Host: 
-4 Puerto: 
-5 Ruta: 
-6 Método HTTP: 
-7 Código de estado:
+---
 
- Prueba de una ruta inexistente
-Ingresé una ruta que no existe, como `/promociones.html`, para observar la respuesta del servidor.
+ — Preparación del proyecto y funcionamiento de la web
 
-- Ruta probada: `/promociones.html`
-- Código de estado: 
-- Significado: el servidor respondió que el recurso solicitado no estaba disponible en esa ruta. Si la respuesta fue 404, significa que no se encontró el recurso solicitado.
+ Estructura inicial
 
-Función de HTML, CSS y JavaScript
+Se establece el proyecto Rueda Libre como un sitio web organizado mediante HTML, CSS y JavaScript.
 
-- HTML: define la estructura y el contenido del sitio. Por ejemplo, permite crear títulos, secciones, tablas de tarifas, imágenes y formularios de reserva.
-- CSS: controla la apariencia visual. Por ejemplo, permite cambiar los colores, los tamaños de letra, los espacios y la distribución de las secciones.
-- JavaScript: permite agregar interactividad y comportamiento. Por ejemplo, puede validar los datos de un formulario o mostrar mensajes al usuario.
- 
- 
- Organización semántica de la página principal
+La estructura inicial contempla:
 
-Organicé `index.html` con un único título principal y las secciones ¿Quiénes somos?, Nuestros servicios, ¿Cómo alquilar? y Encuéntranos.
-Cada servicio tiene su propio subtítulo y párrafo. Utilicé `strong` para destacar información importante, como que el alquiler incluye casco y candado, y `em` para dar énfasis a determinados textos.
-Presenté los cuatro pasos para alquilar mediante una lista ordenada (`ol`) y los tres beneficios del servicio mediante una lista desordenada (`ul`).
-Agregué imágenes de portada, bicicletas y recorridos desde la carpeta `img/`, con rutas relativas, textos alternativos descriptivos mediante `alt` y un ancho definido.
-También incorporé un enlace externo a una ubicación en un mapa, un enlace de correo mediante `mailto:` y un enlace interno a la sección Encuéntranos.
-Finalmente, revisé la estructura en la pestaña Elements de DevTools para comprobar la organización y el cierre correcto de las etiquetas HTML.
+- `index.html`: documento principal.
+- `paginas/`: páginas secundarias.
+- `img/`: imágenes y recursos gráficos.
+- `bitacora.txt`: registro del proceso de desarrollo.
+- `css/styles.css`: hoja de estilos del proyecto.
+
+Se utiliza Visual Studio Code como editor, Live Server para visualizar el sitio y Git para controlar las versiones del código.
+
+ ¿Qué sucede cuando ingresamos a una página web?
+
+Cuando una persona escribe una dirección en el navegador, este realiza una petición HTTP al servidor para solicitar un recurso, por ejemplo, un documento HTML.
+
+La petición y la respuesta contienen información que podemos observar desde las herramientas de desarrollo del navegador, específicamente en la pestaña Network.
 
 
+Registro de la petición local:
 
- Página de tarifas y recorridos guiados
+- URL completa: 
+- Protocolo: 
+- Host: 
+- Puerto: 
+- Ruta: 
+- Método: GET.
+- Estado esperado: 200 OK, cuando el documento se carga correctamente.
 
-Creé `paginas/tarifas.html` con su propia estructura HTML, título de pestaña y descripción para buscadores.
-Construí una tabla de tarifas de alquiler y otra de recorridos guiados. Utilicé `caption` para identificar las tablas, `thead` para los encabezados, `tbody` para los datos y `th` con `scope` para indicar si los encabezados describen filas o columnas.
-Asigné un identificador a la sección de recorridos guiados para enlazarla directamente desde la página principal.
-Debajo de las tablas agregué la información sobre casco y candado, los horarios de salida y la lista de elementos que los clientes deben llevar.
-También incorporé el logo mediante una ruta relativa que sube un nivel desde `paginas/` hasta la carpeta `img/`. Verifiqué los enlaces y revisé Network para detectar posibles errores 404.
+**Prueba de una ruta inexistente:**
+
+Se debe solicitar una dirección que no corresponda a ningún archivo existente, por ejemplo, `/promociones.html`.
+
+El código 404 Not Found indica que el servidor no encontró el recurso solicitado.
+
+Nota: los códigos 200 y 404 corresponden a los resultados esperados de las pruebas; se deben confirmar en Network y registrar los valores observados.
+
+### 3. Funciones de HTML, CSS y JavaScript
+
+**HTML — Estructura**
+
+HTML permite organizar el contenido de una página web mediante etiquetas.
+
+Ejemplo: crear un título, un párrafo o una sección de servicios.
+
+**CSS — Presentación**
+
+CSS permite definir la apariencia visual de la página: colores, tamaños, espacios, tipografías y distribución de los elementos.
+
+Ejemplo: establecer el color verde de la marca Rueda Libre y organizar las tarjetas de servicios.
+
+**JavaScript — Interactividad**
+
+JavaScript permite agregar comportamientos e interacciones.
+
+Ejemplo: crear un botón que permita cambiar entre el modo claro y el modo oscuro.
+
+---
+
+ — Estructura semántica y contenido de inicio
+
+ Organización de la página principal
+
+Se trabaja en la construcción de `index.html`, utilizando una jerarquía correcta de encabezados y elementos semánticos.
+
+La página debe contener un único título principal (`h1`) y las siguientes secciones:
+
+- ¿Quiénes somos?
+- Nuestros servicios.
+- ¿Cómo alquilar?
+- Encuéntranos.
+
+Cada servicio debe tener un subtítulo y un párrafo descriptivo.
+
+ Elementos HTML utilizados
+
+- `h1`, `h2` y `h3`: organizan los títulos y subtítulos.
+- `p`: permite escribir párrafos.
+- `strong`: resalta información importante.
+- `em`: proporciona énfasis a una expresión.
+- `ul`: crea listas con viñetas.
+- `ol`: crea listas numeradas.
+- `li`: representa cada elemento de una lista.
+- `img`: permite insertar imágenes.
+- `a`: crea enlaces.
+
+ Imágenes y accesibilidad
+
+Se utilizan imágenes almacenadas en la carpeta `img/`.
+
+Cada imagen debe contar con:
+
+- `src`: ubicación del archivo.
+- `alt`: descripción alternativa de la imagen.
+- `width`: ancho definido.
+
+Las rutas deben ser relativas y no deben depender de ubicaciones locales del computador.
+
+ Tipos de enlaces
+
+Se trabajan tres tipos de enlaces:
+
+- Enlace absoluto: permite visitar una dirección externa, como una ubicación en un mapa.
+- Enlace de correo: utiliza `mailto:` para abrir la aplicación de correo.
+- Enlace interno: utiliza un identificador `id` y un fragmento como `#encuentranos` para desplazarse a una sección de la misma página.
+
+También se revisa el uso de `target="_blank"` para abrir un enlace en otra pestaña.
+
+ Validación del documento
+
+Mediante DevTools, en el panel Elements, se revisa el árbol del documento para comprobar que las etiquetas estén correctamente anidadas y cerradas.
+
+Se debe verificar que exista un único `h1`, que las secciones tengan una jerarquía coherente y que no existan elementos ubicados dentro de contenedores incorrectos.
+
+---
+
+ — Tarifas, tablas y rutas relativas
+
+ Creación de tarifas.html
+
+Se trabaja en la página `paginas/tarifas.html`, cuyo propósito es presentar los precios de alquiler y los recorridos guiados.
+
+ Tabla de tarifas de bicicletas
+
+| Tipo de bicicleta | 1 hora | Medio día (4 h) | Día completo |
+|---|---:|---:|---:|
+| Urbana | $10.000 | $30.000 | $50.000 |
+| Montaña | $15.000 | $45.000 | $70.000 |
+| Eléctrica | $25.000 | $70.000 | $110.000 |
+
+ Tabla de recorridos guiados
+
+| Recorrido | Distancia | Duración | Nivel | Precio |
+|---|---:|---:|---|---:|
+| Río y Parques | 12 km | 2 h | Fácil | $45.000 |
+| Sabores de Barrio | 18 km | 3 h | Medio | $60.000 |
+| Reto Las Palmas | 25 km | 4 h | Difícil | $85.000 |
+
+Todas las tarifas incluyen casco y candado. Los recorridos se realizan sábados y domingos a las 7:00 a. m.
+
+Qué llevar: ropa cómoda, agua, protector solar y documento de identidad.
+
+ Estructura de las tablas
+
+Se utilizan las siguientes etiquetas:
+
+- `table`: crea la tabla.
+- `caption`: proporciona el título de la tabla.
+- `thead`: agrupa los encabezados.
+- `tbody`: agrupa los datos.
+- `tr`: representa una fila.
+- `th`: representa una celda de encabezado.
+- `td`: representa una celda de datos.
+- `scope`: identifica si un encabezado corresponde a una fila o columna.
+
+Las tablas se utilizan para presentar datos relacionados, no para organizar visualmente toda la página.
+
+ Rutas relativas
+
+Se estudia cómo conectar documentos que se encuentran en carpetas diferentes.
+
+Ejemplos:
+
+- Desde `index.html` hacia tarifas: `paginas/tarifas.html`.
+- Desde `index.html` hacia reservas: `paginas/reservas.html`.
+- Desde `paginas/tarifas.html` hacia inicio: `../index.html`.
+- Desde `paginas/reservas.html` hacia inicio: `../index.html`.
+
+El símbolo `../` permite salir de la carpeta actual y regresar al nivel superior.
+
+También se utiliza la combinación de archivo y fragmento para acceder directamente a una sección de otra página, por ejemplo:
+
+`paginas/tarifas.html#recorridos`
+
+---
+
+Integración de páginas y navegación
+
+ Organización del sitio
+
+Se integran las tres páginas principales:
+
+- `index.html`
+- `paginas/tarifas.html`
+- `paginas/reservas.html`
+
+Se establece un menú común con los enlaces:
+
+- Inicio.
+- Tarifas y rutas.
+- Reservas.
+
+También se establece un pie de página común con el nombre del negocio, el correo electrónico y el año.
+
+Etiquetas semánticas
+
+Se estudian los siguientes elementos:
+
+- `header`: encabezado de una página o sección.
+- `nav`: área de navegación.
+- `main`: contenido principal del documento.
+- `section`: agrupa contenido relacionado.
+- `article`: representa contenido independiente.
+- `aside`: contiene información complementaria.
+- `footer`: representa el pie de página.
+
+Se procura utilizar un único `main` por documento y mantener una estructura semántica coherente.
+
+ Tabla de rutas del proyecto
+
+| Archivo de origen | Destino | Ruta escrita |
+|---|---|---|
+| index.html | Tarifas | paginas/tarifas.html |
+| index.html | Reservas | paginas/reservas.html |
+| tarifas.html | Inicio | ../index.html |
+| tarifas.html | Reservas | reservas.html |
+| reservas.html | Inicio | ../index.html |
+| reservas.html | Tarifas | tarifas.html |
+
+ Verificación de navegación
+
+Se plantea recorrer las tres páginas utilizando únicamente el menú de navegación.
+
+Se deben comprobar las nueve combinaciones de origen y destino, incluyendo la permanencia en cada página, y verificar que no existan errores 404 en Network.
+
+---
+
+ Formularios y validación de datos
+
+Formulario de reservas
+
+Se trabaja en la creación de un formulario para recopilar los datos necesarios para reservar una bicicleta.
+
+El formulario se organiza en tres grupos:
+
+- Tus datos.
+- Tu alquiler.
+- Confirmación.
+
+Se estudia el uso de `form`, `fieldset`, `legend`, `label`, `input`, `select`, `textarea` y `button`.
+
+ Atributos de los formularios
+
+- `action`: indica el destino al que se envían los datos.
+- `method`: define el método de envío.
+- `name`: identifica el dato enviado.
+- `type`: determina el tipo de control.
+- `required`: establece que un campo es obligatorio.
+- `minlength` y `maxlength`: establecen límites de longitud.
+- `min` y `max`: establecen límites numéricos o de fecha.
+- `pattern`: permite establecer un patrón de validación.
+- `autocomplete`: facilita el ingreso de información.
+
+Se estudia el método POST para el envío de datos, teniendo presente que un formulario HTML sin un servidor que procese la información no almacena automáticamente las reservas.
+
+ Validaciones específicas
+
+Se consideran las siguientes reglas:
+
+- Nombre: mínimo tres caracteres.
+- Documento: entre seis y diez dígitos.
+- Celular: diez dígitos, comenzando por 3.
+- Fecha: dentro del período permitido.
+- Cantidad: mínimo una bicicleta y máximo seis.
+- Correo: formato válido.
+- Términos: aceptación obligatoria.
+
+ Pruebas de validación
+
+La siguiente tabla registra los casos que deben probarse en el navegador:
+
+| N.º | Prueba | Resultado esperado |
+
+| 1 | Enviar el formulario vacío | El navegador impide el envío. |
+| 2 | Ingresar un nombre demasiado corto | Se rechaza por longitud mínima. |
+| 3 | Ingresar un correo inválido | Se solicita un correo válido. |
+| 4 | Ingresar un documento con letras | Se rechaza el formato. |
+| 5 | Ingresar un celular con formato incorrecto | Se rechaza el patrón. |
+| 6 | Seleccionar una fecha fuera del rango | Se rechaza la fecha. |
+| 7 | Ingresar una cantidad inferior a 1 o superior a 6 | Se rechaza la cantidad. |
+| 8 | No aceptar los términos | Se impide el envío. |
+
+Estas pruebas deben ejecutarse y registrarse con sus resultados reales.
+
+Accesibilidad del formulario
+
+Se debe comprobar que todos los controles tengan etiquetas asociadas, que los grupos estén identificados y que sea posible recorrer el formulario utilizando únicamente el teclado.
+
+Se revisa el orden de navegación con Tab, Shift + Tab y las teclas correspondientes a cada control.
 
 
 
- Página de reservas
+Fundamentos de CSS y personalización visual
 
-Creé `paginas/reservas.html` con el título principal "Reserva tu bicicleta", el correo de contacto `hola@ruedalibre.example` como enlace y los horarios de atención organizados mediante una lista de definiciones con las etiquetas `dl`, `dt` y `dd`.
-Agregué un menú de navegación al comienzo de las tres páginas: Inicio, Tarifas y rutas, y Reservas.
-También incorporé al final de cada página un pie de página con el nombre del negocio, el correo de contacto y el año correspondiente.
-Añadí enlaces "Reservar ahora" en la página principal y debajo de la tabla de recorridos guiados en la página de tarifas.
+ ¿Qué es CSS?
 
+CSS es el lenguaje utilizado para definir la presentación visual de los documentos HTML.
 
+Permite controlar colores, tipografías, tamaños, espacios, bordes y distribución.
 
-Tabla de rutas utilizadas
-Registré las rutas relativas utilizadas en el menú de navegación de las tres páginas.
+ Variables CSS
 
+Se utilizan variables dentro de `:root` para centralizar los colores y otros valores del proyecto.
 
-/ Archivo de origen / Destino / Ruta escrita /
+Ejemplo:
 
-/ `index.html` / Inicio /`index.html`/
-/ `index.html` / Tarifas y rutas / `paginas/tarifas.html`/
-/ `index.html` / Reservas / `paginas/reservas.html`/
-/ `paginas/tarifas.html` / Inicio / `../index.html`/
-/ `paginas/tarifas.html` / Tarifas y rutas / `tarifas.html`/
-/ `paginas/tarifas.html` / Reservas / `reservas.html`/
-/ `paginas/reservas.html` / Inicio / `../index.html`/
-/ `paginas/reservas.html` / Tarifas y rutas / `tarifas.html`/
-/ `paginas/reservas.html` / Reservas / `reservas.html`/
+```css
+:root {
+    --verde-ruta: #1E7A4F;
+    --naranja-pedal: #9a5a0d;
+    --azul-noche: #002574;
+    --background-color: #FAF6EF;
+    --text-color: #5B6470;
+}
+```
 
-Las rutas se ajustan a la ubicación de cada archivo. Desde la carpeta `paginas/`, se utiliza `../` para regresar a la raíz del proyecto.
+Para utilizar una variable se emplea `var()`.
 
-8. Pruebas de navegación y Network
+Ejemplo:
 
-Recorrí el sitio utilizando el menú de navegación para comprobar el acceso a Inicio, Tarifas y rutas, y Reservas desde cada página
-Revisé la pestaña Network para verificar que los documentos, las imágenes y los demás recursos se cargaran correctamente
-Resultado de la verificación: [indicar si todas las peticiones se cargaron correctamente o registrar los errores encontrados]
+```css
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+```
 
-
-semantica html 
-
-La página contiene un encabezado con el nombre del negocio, una imagen y un menú de navegación. El contenido principal está dentro de main y se organiza en cinco secciones:
-
- 1)bienvenida
- 2)servicios
- 3)como-alquilar
- 4)beneficios
- 5)encuentranos
-
-Dentro de la sección de servicios se utilizan tres artículos: alquiler de bicicletas, recorridos guiados y taller básico
-También se utiliza footer para mostrar el año, el nombre del negocio y el correo electrónico.
-
-El formulario está configurado con method="post" y contiene un botón para enviar los datos
-El documento utiliza lang="es", que identifica el idioma español
-Navegación
-El menú principal está organizado dentro de nav y contiene una lista de enlaces a inicio, reservas y tarifas
-Estructura semántica
-Se utiliza un único main para agrupar el contenido principal. Los bloques temáticos se identifican mediante section, y los servicios individuales se presentan mediante article
-Imágenes
-Las imágenes incluyen atributos alt y valores numéricos en width
+Esto permite mantener una identidad visual coherente y modificar los colores desde un solo lugar.
 
 
-Tabla de registro de validacion <input>
+Se estudia el modelo de caja de CSS:
+
+- Content: contenido del elemento.
+- Padding: espacio interno.
+- Border: borde del elemento.
+- Margin: espacio externo.
+
+También se utiliza `box-sizing: border-box` para facilitar el cálculo de las dimensiones.
+
+ Tipografías y estilos
+
+Se trabajan las fuentes Montserrat y Open Sans.
+
+Se utilizan propiedades como:
+
+- `font-family`.
+- `font-size`.
+- `font-weight`.
+- `line-height`.
+- `color`.
+- `background-color`.
+- `border-radius`.
+- `padding`.
+- `margin`.
+
+Se organiza la hoja de estilos para evitar reglas duplicadas y mantener una estructura clara.
 
 
 
- Dato                                                  DATO DE Prueba     Resultado Esperado                             Resultado obtenido   
-<input> name = "nombre                                 Ra                 Error de validacion por falta de caraceres     prolonga este texto a 4 caraceres
-<input> name = "cedula                                 123                Falta de caraceres                             Formato incorrecto
-<input> name = "correo"                                me                 Falta @                                        incluye una @
-<input> name = "telefono"                              2342               Error no empieza con 3                         Formato incorrecto inicia 3 
-<input> name = "n - biciletas"                         0                  Error debe tener minimo 1                      El valor debe ser minimo 1
-<input> name = "tipo - bicicleta"                      Ninguna            Error debe tener una                           es obligatorio elegir una 
-<input> name = "seleccione una fecha"                  1 1 2027           Error fecha no disponible                      Fecha maxima 31 /12/ 2026
-<input> name = "acepar terminos y condiciones"         no condiones       Error al enviar formulario
+ Flexbox
 
- Hallazgos durante la auditoría
+Flexbox permite distribuir y alinear elementos dentro de un contenedor.
 
-1. `index.html`
-- Hallazgo: La página contiene el atributo `lang="es"`.
-- Corrección: Se mantiene, ya que identifica correctamente el idioma español.
+Propiedades estudiadas:
 
-2. `tarifas.html`
-- Hallazgo: Se encontraron etiquetas mal cerradas y enlaces con estructura incorrecta.
-- Corrección: Se deben organizar las etiquetas y corregir los enlaces.
+- `display: flex`: activa el modelo flexible.
+- `flex-direction`: define la dirección de los elementos.
+- `flex-wrap`: permite que los elementos pasen a otra línea.
+- `justify-content`: distribuye los elementos en el eje principal.
+- `align-items`: alinea los elementos en el eje transversal.
+- `gap`: establece espacios entre elementos.
 
-3. `reservas.html`
-- Hallazgo: La navegación contiene etiquetas `<li>` sin una lista `<ul>` y una etiqueta `</ul>` sobrante.
-- Corrección: Se debe organizar correctamente la lista de enlaces.
+Se aplica principalmente a la navegación y a la distribución de elementos del encabezado.
 
-4. `index.html`
-- Hallazgo: Las imágenes tienen atributos `alt` y `width` definidos.
-- Corrección: Se mantienen para describir las imágenes y establecer su ancho.
+ CSS Grid
 
-5. `tarifas.html` y `reservas.html`**
-- Hallazgo: Los estilos de las tablas están escritos dentro de la etiqueta `<body>`.
-- Corrección: Se recomienda trasladarlos a un archivo CSS.
+Grid permite organizar elementos en filas y columnas.
 
-6. `reservas.html`
-- Hallazgo: La fila de cierre de la tabla no tiene su etiqueta de apertura `<tr>`.
-- Corrección: Se debe agregar para organizar correctamente la tabla.
+Propiedades estudiadas:
+
+- `display: grid`.
+- `grid-template-columns`.
+- `grid-template-rows`.
+- `grid-column`.
+- `gap`.
+- `repeat()`.
+- `minmax()`.
+- `fr`.
+
+Ejemplo:
+
+```css
+#servicios {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+```
+
+Esta distribución permite organizar las tarjetas de servicios en columnas.
+
+ Diseño responsive
+
+El diseño responsive permite adaptar la página a diferentes tamaños de pantalla.
+
+Se estudian las media queries mediante `@media`.
+
+Ejemplo:
+
+```css
+@media (max-width: 600px) {
+    #servicios {
+        grid-template-columns: 1fr;
+    }
+}
+```
+
+También se trabaja con imágenes flexibles, anchos máximos y contenedores que permiten desplazamiento horizontal cuando las tablas son demasiado anchas.
+
+
+
+
+ ¿Qué es Bootstrap?
+
+Bootstrap es un framework CSS que proporciona componentes y clases prediseñadas para desarrollar interfaces web.
+
+Se trabaja mediante su CDN para realizar una práctica independiente.
+
+ Clases estudiadas
+
+- `container`: establece un contenedor.
+- `row`: crea una fila.
+- `col-12`: ocupa doce columnas.
+- `col-md-6`: ocupa seis columnas desde el punto de ruptura mediano.
+- `col-lg-4`: ocupa cuatro columnas desde el punto de ruptura grande.
+- `g-3`: establece separación entre columnas y filas.
+- `card`: crea una tarjeta.
+- `card-body`: organiza el contenido de una tarjeta.
+- `btn`: aplica estilos de botón.
+- `btn-success`: aplica el estilo verde de Bootstrap.
+- `navbar`: permite crear una barra de navegación.
+
+ Diseño adaptable en Bootstrap
+
+Se estudia cómo las clases de columnas cambian según el tamaño de pantalla.
+
+Por ejemplo:
+
+`col-12 col-md-6 col-lg-4`
+
+Esto permite que un elemento ocupe todo el ancho en pantallas pequeñas, la mitad en pantallas medianas y un tercio en pantallas grandes.
+
+
+
+ Personalización
+Se estudia cómo combinar los estilos de Bootstrap con CSS propio para adaptar los componentes a la identidad visual de Rueda Libre.
+
+
+ ¿Qué es Tailwind CSS?
+
+Tailwind CSS es un framework que utiliza clases utilitarias para construir diseños directamente desde el HTML.
+
+En lugar de depender exclusivamente de componentes prediseñados, permite combinar clases que controlan propiedades específicas.
+
+ Clases utilitarias estudiadas
+
+- `bg-stone-100`: establece un fondo claro.
+- `text-green-800`: establece un color de texto.
+- `text-3xl`: establece un tamaño de texto.
+- `font-bold`: aplica negrita.
+- `p-5`: establece espacio interno.
+- `mb-4`: establece margen inferior.
+- `rounded-lg`: redondea los bordes.
+- `shadow`: agrega una sombra.
+- `grid`: activa CSS Grid.
+- `grid-cols-1`: establece una columna.
+- `md:grid-cols-2`: establece dos columnas desde el punto de ruptura mediano.
+- `lg:grid-cols-3`: establece tres columnas desde el punto de ruptura grande.
+- `hover:bg-green-900`: cambia el fondo cuando el usuario pasa el cursor.
+
+ Diseño adaptable
+
+Tailwind utiliza prefijos como `sm:`, `md:` y `lg:` para aplicar estilos según el tamaño de pantalla.
+
+Esto permite construir interfaces adaptables combinando clases utilitarias.
+
+ Modo oscuro
+
+Se estudia el prefijo `dark:` para aplicar estilos cuando la página se encuentra en modo oscuro.
+
+Ejemplo:
+
+```html
+<body class="bg-stone-100 text-slate-800 dark:bg-slate-950 dark:text-white">
+```
+
+También se puede utilizar JavaScript para activar o desactivar la clase `dark` mediante un botón.
+
+
+
+  Tailwind CLI y comparación de frameworks
+
+
+
+ Tailwind mediante CLI
+Se estudia la instalación de Tailwind CSS utilizando Node.js y npm.
+
+Conceptos:
+
+- Node.js: entorno que permite ejecutar JavaScript fuera del navegador.
+- npm: administrador de paquetes.
+- CLI: interfaz de línea de comandos.
+- `package.json`: archivo que registra información y dependencias del proyecto.
+- `node_modules`: carpeta donde se instalan los paquetes.
+- `@import "tailwindcss"`: importa los estilos de Tailwind.
+- `--watch`: mantiene el proceso atento a los cambios.
+
+Se trabaja con un archivo CSS de entrada y un archivo CSS de salida generado mediante la herramienta CLI.
+
+Comando de referencia:
+
+powershell
+npx @tailwindcss/cli -i ./src/input.css -o ./css/tailwind-output.css --watch
+
+ Comparación entre Bootstrap y Tailwind
+
+| Característica | Bootstrap | Tailwind CSS |
+|---|---|---|
+| Enfoque | Componentes y clases prediseñadas | Clases utilitarias |
+| Personalización | Se modifican los estilos existentes | Se combinan utilidades |
+| Desarrollo | Permite construir rápidamente con componentes | Permite controlar cada propiedad del diseño |
+| Responsive | Grid y breakpoints | Prefijos responsive |
+| Uso | Interfaces con componentes preparados | Interfaces personalizadas |
+
+Ambos frameworks permiten desarrollar sitios adaptables. La elección depende de las necesidades del proyecto y del nivel de personalización requerido.
+
+
+
+Aprendisajes 
+
+Durante el desarrollo de Rueda Libre se estudia la importancia de separar la estructura, la presentación y la interactividad de una página web.
+
+También se reconoce que:
+
+1. HTML debe mantener una estructura semántica y accesible.
+2. CSS permite construir una identidad visual consistente.
+3. Flexbox y Grid resuelven diferentes necesidades de distribución.
+4. Las rutas relativas permiten conectar correctamente documentos ubicados en diferentes carpetas.
+5. Los formularios requieren etiquetas, controles adecuados y validaciones.
+6. DevTools permite inspeccionar la estructura y detectar errores de carga.
+7. Bootstrap y Tailwind ofrecen enfoques diferentes para construir interfaces.
+8. Git permite mantener un historial de los cambios realizados.
+9. realize una mini version de Bootstrap y de tailwind para probar funcionalidades no queria dañar mi pagina 
+
+
+
+Los siguientes puntos deben comprobarse sobre la versión final del proyecto:
+
+- [ ] Confirmar la URL, el protocolo, el host, el puerto y la ruta desde Network.
+- [ ] Confirmar los estados HTTP 200 y 404.
+- [ ] Verificar la jerarquía semántica de las tres páginas.
+- [ ] Comprobar que las imágenes tengan rutas válidas y textos alternativos.
+- [ ] Verificar las dos tablas y sus encabezados accesibles.
+- [ ] Comprobar los enlaces y las rutas relativas desde las tres páginas.
+- [ ] Ejecutar las ocho pruebas del formulario.
+- [ ] Recorrer el formulario utilizando únicamente el teclado.
+- [ ] Comprobar el diseño en diferentes tamaños de pantalla.
+- [ ] Verificar las prácticas de Bootstrap y Tailwind en el navegador.
+- [ ] Confirmar que Tailwind CLI genera el archivo CSS correctamente.
+- [ ] Actualizar este registro con los resultados reales de las pruebas.
