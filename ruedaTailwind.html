@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rueda Libre - Tailwind</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style type="text/tailwindcss">
+        @custom-variant dark (&:where(.dark, .dark *));
+    </style>
+</head>
+
+<body class="bg-stone-100 text-slate-800 dark:bg-slate-950 dark:text-white">
+
+    <main class="max-w-5xl mx-auto p-6">
+
+        <header class="flex justify-between items-center mb-8">
+            <h1 class="text-3xl font-bold text-green-800 dark:text-green-400">
+                Rueda Libre
+            </h1>
+
+            <button
+                id="modoOscuro"
+                class="bg-green-700 hover:bg-green-900 text-white px-4 py-2 rounded-lg">
+                Cambiar tema
+            </button>
+        </header>
+
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <article class="bg-white dark:bg-slate-800 p-6 rounded-lg shadow">
+                <h2 class="text-xl font-bold mb-3">Alquiler de bicicletas</h2>
+                <p>Explora Medellín utilizando nuestras bicicletas.</p>
+            </article>
+
+            <article class="bg-white dark:bg-slate-800 p-6 rounded-lg shadow">
+                <h2 class="text-xl font-bold mb-3">Rutas guiadas</h2>
+                <p>Descubre nuevos lugares y disfruta de la ciudad.</p>
+            </article>
+
+        </section>
+
+    </main>
+
+    <script>
+        const boton = document.getElementById("modoOscuro");
+
+        boton.addEventListener("click", () => {
+            document.documentElement.classList.toggle("dark");
+        });
+    </script>
+
+</body>
+</html>

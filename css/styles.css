@@ -337,3 +337,92 @@ nav a:focus-visible {
     background-color: var(--verde-ruta);
     text-decoration: none;
 }
+
+/* Tablas responsive */
+.tabla-contenedor {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    margin-bottom: var(--espacio-grande);
+}
+
+.tabla-contenedor table {
+    width: 100%;
+    min-width: 520px;
+}
+
+/* imagenes responisve */
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* formularios responsive */
+
+form {
+    width: 100%;
+    max-width: 650px;
+}
+
+input,
+select,
+textarea {
+    max-width: 100%;
+}
+
+
+
+
+
+/*este apartado es para probar las posibilidades el boostrap */
+
+
+/* Personalisacion de Boostrap */
+
+.pagina-bootstrap {
+    background-color: var(--background-color);
+}
+
+/* Barra de navegación */
+.pagina-bootstrap .navbar {
+    background-color: var(--blanco) !important;
+    padding: var(--espacio-mediano);
+    border: 1px solid #D8DED9;
+}
+
+.pagina-bootstrap .navbar-brand {
+    color: var(--verde-ruta);
+    font-family: var(--font-family-heading);
+    font-weight: 700;
+}
+
+.pagina-bootstrap .navbar .nav-link {
+    color: var(--verde-ruta);
+    font-weight: 600;
+}
+
+/* Tarjetas */
+.pagina-bootstrap .card {
+    height: 100%;
+    border: 1px solid #D8DED9;
+    border-radius: var(--radio-borde);
+    background-color: var(--blanco);
+}
+
+.pagina-bootstrap .card-title {
+    color: var(--azul-noche);
+    font-family: var(--font-family-heading);
+}
+
+/* Botones */
+.pagina-bootstrap .btn-success {
+    background-color: var(--verde-ruta);
+    border-color: var(--verde-ruta);
+}
+
+.pagina-bootstrap .btn-success:hover {
+    background-color: var(--gris-asfalto);
+    border-color: var(--gris-asfalto);
+}
