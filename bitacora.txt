@@ -564,6 +564,7 @@ También se reconoce que:
 7. Bootstrap y Tailwind ofrecen enfoques diferentes para construir interfaces.
 8. Git permite mantener un historial de los cambios realizados.
 9. realize una mini version de Bootstrap y de tailwind para probar funcionalidades no queria dañar mi pagina 
+10 re organize varias veces el css por que me parecio complejo definir los parametros como primera experiencia pero fue entretenido 
 
 
 
