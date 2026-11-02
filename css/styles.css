@@ -189,12 +189,16 @@ form {
     display: flex;
     flex-direction: column;
     gap: var(--espacio-mediano);
+
+    width: 100%;
     max-width: 650px;
+
+    margin: 0 auto;
 }
 
 .campo-formulario {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
     gap: var(--espacio-pequeno);
 }
 
@@ -407,9 +411,6 @@ textarea {
 }
 
 
-
-
-
 /*este apartado es para probar las posibilidades el boostrap */
 
 
@@ -461,10 +462,6 @@ textarea {
     border-color: var(--gris-asfalto);
 }
 
-
-/* ==================================================
-   AJUSTES DE PRESENTACION: TITULOS E IMAGENES
-   ================================================== */
 
 /* Marca compartida: el encabezado se ve igual en las tres páginas. */
 .marca {
@@ -557,3 +554,14 @@ main section > h2 {
         height: 160px;
     }
 }
+.boton-reservar {
+    display: inline-block;
+    background-color: var(--verde-ruta);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    front-weight: bold;
+    transition: 0.3s;
+}         
+
