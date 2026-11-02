@@ -43,6 +43,19 @@
     border-radius: var(--radio-borde);
     border-bottom: 4px solid var(--verde-ruta);
 }
+
+.reservas-encabezado {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--espacio-mediano);
+    padding: var(--espacio-mediano);
+    margin-bottom: var(--espacio-grande);
+    background-color: var(--blanco);
+    border-radius: var(--radio-borde);
+    border-bottom: 4px solid var(--verde-ruta);
+}
+
+        
 .encabezado h1 {
     color: var(--verde-ruta);
     margin-bottom: 0;
@@ -446,4 +459,101 @@ textarea {
 .pagina-bootstrap .btn-success:hover {
     background-color: var(--gris-asfalto);
     border-color: var(--gris-asfalto);
+}
+
+
+/* ==================================================
+   AJUSTES DE PRESENTACION: TITULOS E IMAGENES
+   ================================================== */
+
+/* Marca compartida: el encabezado se ve igual en las tres páginas. */
+.marca {
+    flex: 1 1 220px;
+}
+
+.marca h1 {
+    margin: 0;
+    color: var(--verde-ruta);
+    font-family: var(--font-family-heading);
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+.marca p {
+    margin: 0.25rem 0 0;
+}
+
+.logo-rueda {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+}
+
+/* Los títulos de sección mantienen el mismo estilo en todo el sitio. */
+main section > h2 {
+    margin-bottom: var(--espacio-mediano);
+    padding-bottom: 0.5rem;
+    color: var(--azul-noche);
+    font-family: var(--font-family-heading);
+    font-size: 1.5rem;
+    border-bottom: 3px solid var(--verde-ruta);
+}
+
+/* Las tarjetas de servicios se organizan en columnas. */
+#servicios article,
+.tarjeta-bicicleta {
+    min-width: 0;
+    padding: var(--espacio-mediano);
+    background-color: var(--blanco);
+    border: 1px solid #D8DED9;
+    border-radius: var(--radio-borde);
+}
+
+.imagen-servicio,
+.imagen-bicicleta {
+    display: block;
+    width: 100%;
+    height: 180px;
+    margin: var(--espacio-mediano) 0;
+    object-fit: cover;
+    border-radius: var(--radio-borde);
+}
+
+.cuadricula-flota {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--espacio-mediano);
+}
+
+.imagen-beneficios {
+    width: min(100%, 320px);
+    max-height: 220px;
+    object-fit: cover;
+    border-radius: var(--radio-borde);
+}
+
+.acciones-formulario {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espacio-mediano);
+}
+
+@media (max-width: 600px) {
+    .marca h1 {
+        font-size: 1.6rem;
+    }
+
+    .logo-rueda {
+        width: 64px;
+        height: 64px;
+    }
+
+    #servicios {
+        grid-template-columns: 1fr;
+    }
+
+    .imagen-servicio,
+    .imagen-bicicleta {
+        height: 160px;
+    }
 }
