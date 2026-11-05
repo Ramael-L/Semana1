@@ -8,7 +8,7 @@
     <meta name="description"
         content="Consulta las tarifas de alquiler de bicicletas y los precios de los recorridos guiados de Rueda Libre en Medellín.">
 
-    <title>Tarifas y recorridos / Rueda Libre</title>
+    <title>Tarifas y recorridos | Rueda Libre</title>
     <link rel="stylesheet" href="../css/styles.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,8 +31,9 @@
         <nav aria-label="Navegación principal">
             <ul>
                 <li><a href="../index.html">Inicio</a></li>
-                <li><a href="reservas.html">Reservas</a></li>
                 <li><a href="tarifas.html" aria-current="page">Tarifas y rutas</a></li>
+                <li><a href="reservas.html">Reservas</a></li>
+                
             </ul>
         </nav>
     </header>
@@ -40,18 +41,20 @@
 <main>
 
 
+            
+    
     <section id="tarifas-alquiler">
 
         <h2>Tarifas de alquiler de bicicletas</h2>
 
 
-    <p>Consulta nuestros precios de alquiler y descubre nuestros recorridos guiados por Medellín.</p>
+        <p>Consulta nuestros precios de alquiler y descubre nuestros recorridos guiados por Medellín.</p>
 
 
 
 
-    <table class="tarifas-alquiler">
-        <caption>precios de alquiler segun tipo de bicicleta y duracion</caption>
+        <div class="tabla-contenedor"><table class="recorridos">
+        <caption>Precios de alquiler según tipo de bicicleta y duración</caption>
         <thead>
             <tr>
                 <th scope="col">Tipo de bicicleta</th>
@@ -84,20 +87,20 @@
             </tr>
         </tbody>
 
-    </table>  
+        </table></div>  
 
-    <p> <a href="reservas.html">Reserva ahora :D</a></p>
+        <p> <a href="reservas.html">Reservar ahora</a></p>
    
-</section>
+    </section>
 
    
     <section id="recorridos">
    
         <h2>Recorridos guiados</h2>
    
-    <p>Descubre Medellin en bicicleta con nuestros recorridos guiados.</p>
+    <p>Descubre Medellín en bicicleta con nuestros recorridos guiados.</p>
    
-    <table class="recorridos">
+    <div class="tabla-contenedor"><table class="recorridos">
    
         <caption>Características y precios de nuestros recorridos guiados por Medellín.</caption>
 
@@ -107,7 +110,6 @@
                 <th scope="col">Distancia</th>
                 <th scope="col">Duración</th>
                 <th scope="col">Nivel</th>
-                
                 <th scope="col">Precio por persona</th>
         
             </tr>
@@ -150,50 +152,57 @@
 
         </tbody>
 
-    </table>
+    </table></div>
 
-    <p><a href="reservas.html">Reserva ahora :D</a></p>
+    <p><a href="reservas.html">Reservar ahora</a></p>
 
 </section>
 
 
-    <section id="informcacion">
+    <section id="informacion">
 
 
         <h2>Información importante</h2>
 
 
-    <p>Todas las tarifas de alquiler incluyen casco y candado, los recorridos guiados salen los sábados y domingos a las
-        7:00 a. m..</p>
+                     <p>Todas las tarifas de alquiler incluyen casco y candado, los recorridos guiados salen los sábados y domingos a las 7:00 a. m.</p>
 
-        
-        <aside> 
+                    
+                <aside> 
             
-            <h3>¿Qué debes llevar?</h3>            
+                    <h3>¿Qué debes llevar?</h3>            
     
-            <ul>
+                         <ul>
     
-                <li>Ropa cómoda.</li>
+                            <li>Ropa cómoda.</li>
     
-                <li>Agua para mantenerte hidratado.</li>
+                            <li>Agua para mantenerte hidratado.</li>
     
-                <li>Protector solar.</li>
-    
-         
-                <li>Documento de identidad.</li>
+                            <li>Protector solar.</li>
     
          
-            </ul>
+                            <li>Documento de identidad.</li>
+    
+         
+                        </ul>
            
-        </aside>
+                </aside>
 
         </section>
 
-</main>
+    </main>
     
         
-<footer>&copy Rueda libre/ hola@ruedalibre.example/ 2026</footer>
-        </body>
+<footer>
+        <div class="pie-contenedor">
+            <div><h2>Rueda Libre</h2><p>Descubre Medellín sobre dos ruedas.</p></div>
+            <div><h3>Contacto</h3><p><a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></p></div>
+            <div><h3>Horarios</h3><p>Lunes a viernes: 7:00 a. m. a 7:00 p. m.</p><p>Fines de semana: 6:00 a. m. a 2:00 p. m.</p></div>
+        </div>
+        <p class="derechos">&copy; 2026 Rueda Libre. Proyecto académico.</p>
+    </footer>
+
+</body>
  
     
         </html>

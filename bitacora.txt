@@ -582,3 +582,13 @@ Los siguientes puntos deben comprobarse sobre la versión final del proyecto:
 - [ ] Verificar las prácticas de Bootstrap y Tailwind en el navegador.
 - [ ] Confirmar que Tailwind CLI genera el archivo CSS correctamente.
 - [ ] Actualizar este registro con los resultados reales de las pruebas.
+
+
+=== ACTUALIZACIÓN DEL PROYECTO · 5 DE NOVIEMBRE DE 2026 ===
+Objetivo: ordenar y hacer comprensible Rueda Libre sin cambiar los contenidos esenciales.
+HTML: se corrigió el enlace de bienvenida, el identificador de la flota, la agrupación de servicios, el cierre incorrecto del aside en reservas y la letra S accidental. Se normalizaron títulos, tablas con contenedor desplazable y pies de página compartidos en las tres páginas.
+CSS: se reemplazó la hoja anterior por un archivo más corto con variables en :root. Las variables --verde-ruta, --gris-asfalto, --radio, --espacio y --ancho se reutilizan en distintos elementos. Flexbox distribuye la cabecera; Grid organiza las tarjetas y el pie; la media query adapta la cabecera para celular.
+Formulario: se agregaron comentarios, autorización y un aviso de demostración. No existe servidor para recibir reservas; al enviar, solo aparece un aviso. Los datos no se almacenan ni se envían.
+Rueda Nocturna: se crearon prototipo.html, index.html y componentes.html con utilidades Tailwind cargadas mediante Play CDN (instrucción del profesor). No se instaló CLI ni se generó output.css. Por tanto, los requisitos exclusivos de CLI, @theme y @apply no están cumplidos con esta modalidad.
+Diferencia entre Bootstrap y Tailwind: Bootstrap ofrece componentes prediseñados; Tailwind permite componer estilos usando utilidades directamente. El enlace principal utiliza clases de fondo, padding, redondeo, hover y foco de Tailwind; no se implementó un botón de Bootstrap en esta entrega por indicación del profesor.
+Pendiente: probar visualmente en el navegador a 360, 768, 1024 y 1280 px; comprobar con teclado y lector de pantalla; confirmar el enlace real de Maps, correo y horarios; publicar en GitHub Pages y entregar URL. No se reportan estas pruebas como realizadas.

@@ -1,148 +1,187 @@
-/* Colores de marca */
-
-/* variables de Libre */
-
+/* Rueda Libre: estilos compartidos, sencillos y reutilizables */
 :root {
-    /* Colores de marca */
-    --verde-ruta: #1E7A4F;
+    --verde-ruta: #1e7a4f;
     --naranja-pedal: #9a5a0d;
     --azul-noche: #002574;
     --crema: #875600;
     --gris-asfalto: #1d2f45;
-
-    /* Colores generales */
-    --background-color: #FAF6EF;
-    --text-color: #5B6470;
-    --blanco: #FFFFFF;
-
-    /* Tipografías */
-    --font-family: "Open Sans", sans-serif;
-    --font-family-heading: "Montserrat", sans-serif;
-
-    /* Espaciados */
-    --espacio-pequeno: 0.5rem;
-    --espacio-mediano: 1rem;
-    --espacio-grande: 2rem;
-
-    /* Diseño */
-    --radio-borde: 8px;
-    --ancho-contenido: 1100px;
+    --fondo: #faf6ef;
+    --texto: #344354;
+    --blanco: #fff;
+    --espacio: 1rem;
+    --radio: 8px;
+    --ancho: 1100px;
+    --fuente-texto: "Open Sans", sans-serif;
+    --fuente-titulo: Montserrat, sans-serif;
 }
 
-/* Reglas generales sobre rueda libre */
-
-.encabezado {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--espacio-mediano);
-    padding: var(--espacio-mediano);
-    margin-bottom: var(--espacio-grande);
-    background-color: var(--blanco);
-    border-radius: var(--radio-borde);
-    border-bottom: 4px solid var(--verde-ruta);
-}
-
-.reservas-encabezado {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: var(--espacio-mediano);
-    padding: var(--espacio-mediano);
-    margin-bottom: var(--espacio-grande);
-    background-color: var(--blanco);
-    border-radius: var(--radio-borde);
-    border-bottom: 4px solid var(--verde-ruta);
-}
-
-        
-.encabezado h1 {
-    color: var(--verde-ruta);
-    margin-bottom: 0;
-}
-
-.encabezado p { 
-    margin-top: 0;
-}
-
-    * 
-    {
+* {
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
-    padding: var(--espacio-mediano);
-    font-family: var(--font-family);
-    font-weight: 400;
+    background: var(--fondo);
+    color: var(--texto);
+    font-family: var(--fuente-texto);
     line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--background-color);
 }
 
-header,
-main,
-footer {
-    max-width: var(--ancho-contenido);
-    margin-left: auto;
-    margin-right: auto;
-    }
-/* Navegacion */
+h1, h2, h3 {
+    font-family: var(--fuente-titulo);
+    line-height: 1.25;
+    color: var(--gris-asfalto);
+}
+
+a {
+    color: var(--azul-noche);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+    outline: 3px solid var(--naranja-pedal);
+    outline-offset: 2px;
+}
+
+.encabezado, main, .pie-contenedor {
+    max-width: var(--ancho);
+    margin: auto;
+    padding: 1.5rem var(--espacio);
+}
+
+.encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--espacio);
+    flex-wrap: wrap;
+}
+
+.marca {
+    flex: 1 1 200px;
+}
+
+.marca h1 {
+    margin: 0;
+    color: var(--verde-ruta);
+}
+
+.marca p {
+    margin: .25rem 0 0;
+}
+
+.logo-rueda {
+    width: 85px;
+    height: 85px;
+    object-fit: contain;
+}
 
 nav ul {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--espacio-mediano);
-    padding: 0;
+    gap: var(--espacio);
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 nav a {
     display: inline-block;
-    padding: var(--espacio-pequeno);
-    color: var(--verde-ruta);
+    padding: .55rem .8rem;
+    text-decoration: none;
+    border-radius: var(--radio);
     font-weight: 600;
+}
+
+nav a:hover, nav a[aria-current="page"] {
+    background: var(--verde-ruta);
+    color: var(--blanco);
+}
+
+main > section {
+    margin-bottom: 2rem;
+}
+
+section > h2 {
+    margin-top: 0;
+}
+
+.boton, button[type="submit"] {
+    display: inline-block;
+    background: var(--verde-ruta);
+    color: var(--blanco);
+    border: 0;
+    border-radius: var(--radio);
+    padding: .75rem 1.1rem;
+    font: 600 1rem var(--fuente-texto);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.boton:hover, button[type="submit"]:hover {
+    background: var(--gris-asfalto);
+    color: var(--blanco);
     text-decoration: none;
 }
 
-nav a:hover,
-nav a:focus-visible {
-    color: var(--naranja-pedal);
-    text-decoration: underline;
+.cuadricula-servicios, .cuadricula-flota {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    gap: var(--espacio);
 }
 
-/* Tablas */
+.servicio, .tarjeta-bicicleta, aside, fieldset {
+    padding: var(--espacio);
+    border: 1px solid #d4dbd8;
+    border-radius: var(--radio);
+    background: var(--blanco);
+}
 
-.tarifas,
-.tarifas-alquiler,
-.recorridos,
-.horarios {
+.servicio img, .tarjeta-bicicleta img {
+    display: block;
+    max-width: 100%;
     width: 100%;
-    border-collapse: collapse;
-    margin-bottom: var(--espacio-grande);
+    height: 180px;
+    object-fit: contain;
+    border-radius: var(--radio);
 }
 
-.tarifas th,
-.tarifas td,
-.tarifas-alquiler th,
-.tarifas-alquiler td,
-.recorridos th,
-.recorridos td,
-.horarios th,
-.horarios td {
-    border: 1px solid var(--text-color);
-    padding: var(--espacio-pequeno);
-    text-align: left;
+.servicio h3, .tarjeta-bicicleta h3 {
+    margin-bottom: .4rem;
+}
+
+.tabla-contenedor {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background: var(--blanco);
 }
 
 caption {
-    padding: var(--espacio-mediano);
     font-weight: 600;
+    padding: .6rem;
     text-align: left;
 }
 
+th, td {
+    border: 1px solid #cbd5d1;
+    text-align: left;
+    padding: .7rem;
+}
+
 thead {
-    background-color: var(--verde-ruta);
+    background: var(--verde-ruta);
     color: var(--blanco);
 }
 
@@ -150,296 +189,95 @@ thead th {
     color: var(--blanco);
 }
 
-/* Formulario */
-
 form {
-    display: flex;
-    flex-direction: column;
-    gap: var(--espacio-mediano);
-
-    width: 100%;
-    max-width: 650px;
-
-    margin: 0 auto;
-}
-
-.campo-formulario {
-    display: flex;
-    flex-direction: column; 
-    gap: var(--espacio-pequeno);
-}
-
-input,
-select,
-textarea,
-button {
-    font: inherit;
-}
-
-input,
-select,
-textarea {
-    width: 100%;
-    padding: var(--espacio-pequeno);
-    border: 1px solid var(--text-color);
-    border-radius: var(--radio-borde);
-}
-
-input[type="checkbox"],
-input[type="radio"] {
-    width: auto;
+    max-width: 720px;
+    margin: auto;
 }
 
 fieldset {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--espacio-mediano);
-    border: 1px solid var(--text-color);
-    border-radius: var(--radio-borde);
-    padding: var(--espacio-mediano);
+    margin: 0 0 var(--espacio);
 }
 
-button {
-    width: fit-content;
-    padding: var(--espacio-pequeno) var(--espacio-mediano);
-    border: none;
-    border-radius: var(--radio-borde);
-    background-color: var(--verde-ruta);
-    color: var(--blanco);
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: var(--gris-asfalto);
-}
-
-
-footer {
-    margin-top: var(--espacio-grande);
-    padding: var(--espacio-mediano);
-    border-top: 1px solid var(--text-color);
-}
-
-/* Responvide */
-
-@media (max-width: 600px) {
-    body {
-        padding: var(--espacio-pequeno);
-    }
-
-    h1 {
-        font-size: 1.6rem;
-    }
-
-    h2 {
-        font-size: 1.3rem;
-    }
-
-    table {
-        font-size: 0.85rem;
-    }
-
-    th,
-    td {
-        padding: 0.35rem;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: var(--espacio-pequeno);
-    }
-
-    form {
-        max-width: 100%;
-    }
-}
-
-
-/* Tablas responsive */
-.tabla-contenedor {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: auto;
-    margin-bottom: var(--espacio-grande);
-}
-
-.tabla-contenedor table {
-    width: 100%;
-    min-width: 520px;
-}
-
-/* imagenes responisve */
-
-img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
-
-/* formularios responsive */
-
-form {
-    width: 100%;
-    max-width: 650px;
-}
-
-input,
-select,
-textarea {
-    max-width: 100%;
-}
-
-
-/*este apartado es para probar las posibilidades el boostrap */
-
-
-/* Personalisacion de Boostrap */
-
-.pagina-bootstrap {
-    background-color: var(--background-color);
-}
-
-/* Barra de navegación */
-.pagina-bootstrap .navbar {
-    background-color: var(--blanco) !important;
-    padding: var(--espacio-mediano);
-    border: 1px solid #D8DED9;
-}
-
-.pagina-bootstrap .navbar-brand {
-    color: var(--verde-ruta);
-    font-family: var(--font-family-heading);
+legend {
+    color: var(--gris-asfalto);
     font-weight: 700;
 }
 
-.pagina-bootstrap .navbar .nav-link {
-    color: var(--verde-ruta);
-    font-weight: 600;
-}
-
-/* Tarjetas */
-.pagina-bootstrap .card {
-    height: 100%;
-    border: 1px solid #D8DED9;
-    border-radius: var(--radio-borde);
-    background-color: var(--blanco);
-}
-
-.pagina-bootstrap .card-title {
-    color: var(--azul-noche);
-    font-family: var(--font-family-heading);
-}
-
-/* Botones */
-.pagina-bootstrap .btn-success {
-    background-color: var(--verde-ruta);
-    border-color: var(--verde-ruta);
-}
-
-.pagina-bootstrap .btn-success:hover {
-    background-color: var(--gris-asfalto);
-    border-color: var(--gris-asfalto);
-}
-
-
-/* Marca compartida: el encabezado se ve igual en las tres páginas. */
-.marca {
-    flex: 1 1 220px;
-}
-
-.marca h1 {
-    margin: 0;
-    color: var(--verde-ruta);
-    font-family: var(--font-family-heading);
-    font-size: 2rem;
-    line-height: 1.2;
-}
-
-.marca p {
-    margin: 0.25rem 0 0;
-}
-
-.logo-rueda {
-    width: 90px;
-    height: 90px;
-    object-fit: contain;
-}
-
-/* Los títulos de sección mantienen el mismo estilo en todo el sitio. */
-main section > h2 {
-    margin-bottom: var(--espacio-mediano);
-    padding-bottom: 0.5rem;
-    color: var(--azul-noche);
-    font-family: var(--font-family-heading);
-    font-size: 1.5rem;
-    border-bottom: 3px solid var(--verde-ruta);
-}
-
-/* Las tarjetas de servicios se organizan en columnas. */
-#servicios article,
-.tarjeta-bicicleta {
-    min-width: 0;
-    padding: var(--espacio-mediano);
-    background-color: var(--blanco);
-    border: 1px solid #D8DED9;
-    border-radius: var(--radio-borde);
-}
-
-.imagen-servicio,
-.imagen-bicicleta {
-    display: block;
-    width: 100%;
-    height: 180px;
-    margin: var(--espacio-mediano) 0;
-    object-fit: cover;
-    border-radius: var(--radio-borde);
-}
-
-.cuadricula-flota {
+.campo-formulario, .campo {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: var(--espacio-mediano);
+    gap: .35rem;
+    margin-bottom: var(--espacio);
 }
 
-.imagen-beneficios {
-    width: min(100%, 320px);
-    max-height: 220px;
-    object-fit: cover;
-    border-radius: var(--radio-borde);
+input:not([type="radio"]):not([type="checkbox"]), select, textarea {
+    width: 100%;
+    padding: .65rem;
+    border: 1px solid #9aa7ac;
+    border-radius: var(--radio);
+    font: inherit;
 }
 
-.acciones-formulario {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--espacio-mediano);
+fieldset > label {
+    display: inline-block;
+    margin: .4rem 1rem .4rem 0;
+}
+
+.aceptacion {
+    display: block;
+    margin-bottom: var(--espacio);
+}
+
+.nota {
+    font-size: .9rem;
+}
+
+dl {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: .35rem 1rem;
+}
+
+dt {
+    font-weight: 700;
+}
+
+dd {
+    margin: 0;
+}
+
+footer {
+    background: var(--gris-asfalto);
+    color: var(--blanco);
+}
+
+footer h2, footer h3, footer a {
+    color: var(--blanco);
+}
+
+.pie-contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.derechos {
+    text-align: center;
+    margin: 0;
+    padding: 0 1rem 1rem;
 }
 
 @media (max-width: 600px) {
-    .marca h1 {
-        font-size: 1.6rem;
+    .encabezado {
+        justify-content: center;
+        text-align: center;
     }
-
-    .logo-rueda {
-        width: 64px;
-        height: 64px;
+    nav ul {
+        justify-content: center;
     }
-
-    #servicios {
+    dl {
         grid-template-columns: 1fr;
     }
-
-    .imagen-servicio,
-    .imagen-bicicleta {
-        height: 160px;
+    dd {
+        margin-bottom: .5rem;
     }
 }
-.boton-reservar {
-    display: inline-block;
-    background-color: var(--verde-ruta);
-    color: white;
-    padding: 12px 24px;
-    border-radius: 8px;
-    text-decoration: none;
-    front-weight: bold;
-    transition: 0}
-    

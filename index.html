@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Rueda Libre | Alquiler de bicicletas</title>
+    <title>Rueda Libre | Alquiler de bicicletas en Medellín</title>
 
     <meta name="description"
         content="Alquiler de bicicletas y recorridos guiados en Medellín con Rueda Libre.">
@@ -29,11 +29,12 @@
 
         <img class="logo-rueda" src="img/imagen4.png" alt="Imagen representativa de Rueda Libre">
 
-        <nav>
+        <nav aria-label="Navegación principal">
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="paginas/reservas.html">Reservas</a></li>
+                <li><a href="index.html" aria-current="page">Inicio</a></li>
                 <li><a href="paginas/tarifas.html">Tarifas y rutas</a></li>
+                <li><a href="paginas/reservas.html">Reservas</a></li>
+                
             </ul>
         </nav>
     </header>
@@ -42,7 +43,7 @@
 
         <!-- BIENVENIDA -->
 
-        <section id="bienvenida" class="bienvenida">
+        <section>
 
             <h2>Bienvenido a Rueda Libre</h2>
 
@@ -55,12 +56,10 @@
             <p>
                 Somos un negocio especializado en el alquiler de bicicletas de
                 calidad para que disfrutes cada recorrido a tu propio ritmo.
+                <a href="#encuentranos">¿Dónde encontrarnos?</a>
             </p>
 
-            <a href="paginas/reservas.html" 
-               class="inline-block bg-green-700 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-900 transition">
-                Reserva tu bicicleta
-            </a>
+            <a href="paginas/reservas.html" class="boton">Reserva tu bicicleta</a>
 
         </section>
 
@@ -71,7 +70,8 @@
 
             <h2>Nuestros servicios</h2>
 
-            <article class="tarjeta-servicio">
+            <div class="cuadricula-servicios">
+            <article class="servicio">
 
                 <h3>Alquiler de bicicletas</h3>
 
@@ -86,7 +86,7 @@
 
             </article>
 
-            <article class="tarjeta-servicio">
+            <article class="servicio">
 
                 <h3>Recorridos guiados</h3>
 
@@ -103,14 +103,14 @@
 
             </article>
 
-            <article class="tarjeta-servicio">
+            <article class="servicio">
 
                 <h3>Taller básico</h3>
 
                 <p>
                     Aprende sobre el cuidado y el mantenimiento básico de tu
                     bicicleta para disfrutar de viajes seguros.
-                </p><br>
+                </p>
 
                 <img class="imagen-servicio" src="img/imagen14.png" alt="Taller de mantenimiento de bicicletas">
 
@@ -119,17 +119,17 @@
                 </a>
 
             </article>
-
+            </div>
         </section>
 
 
-        <!-- NUESTRA FLOTA -->
+        <!-- el section es el sector de toda la pagina en especifico -->
 
-        <section id="flota">
+        <section id="bicicletas">
 
             <h2>Nuestra flota</h2>
 
-            <p class="introduccion-flota">
+            <p>
                 Encuentra la bicicleta ideal para tu próxima aventura.
                 Tenemos diferentes modelos para recorrer Medellín.
             </p>
@@ -146,9 +146,9 @@
                         Cómoda y liviana para las ciclorrutas.
                     </p>
 
-                    <p class="precio-bicicleta">$10.000 / hora</p>
+                    <p>$10.000 / hora</p>
 
-                    <a href="paginas/reservas.html#reservas" class="boton-reservar">
+                    <a href="paginas/reservas.html#reservas" class="boton">
                         Reservar
                     </a>
 
@@ -165,9 +165,9 @@
                         Se dobla en segundos; ideal para combinar con el metro.
                     </p>
 
-                    <p class="precio-bicicleta">$12.000 / hora</p>
+                    <p>$12.000 / hora</p>
 
-                    <a href="paginas/reservas.html#reservas" class="boton-reservar">
+                    <a href="paginas/reservas.html#reservas" class="boton">
                         Reservar
                     </a>
 
@@ -184,9 +184,9 @@
                         Suspensión delantera y 21 cambios para las subidas.
                     </p>
 
-                    <p class="precio-bicicleta">$15.000 / hora</p>
+                    <p>$15.000 / hora</p>
 
-                    <a href="paginas/reservas.html#reservas" class="boton-reservar">
+                    <a href="paginas/reservas.html#reservas" class="boton">
                         Reservar
                     </a>
 
@@ -203,9 +203,9 @@
                         Para rutas mixtas de asfalto y destapado.
                     </p>
 
-                    <p class="precio-bicicleta">$18.000 / hora</p>
+                    <p>$18.000 / hora</p>
 
-                    <a href="paginas/reservas.html#reservas" class="boton-reservar">
+                    <a href="paginas/reservas.html#reservas" class="boton">
                         Reservar
                     </a>
 
@@ -222,9 +222,9 @@
                         Asistencia eléctrica con 45 km de autonomía.
                     </p>
 
-                    <p class="precio-bicicleta">$25.000 / hora</p>
+                    <p>$25.000 / hora</p>
 
-                    <a href="paginas/reservas.html#reservas" class="boton-reservar">
+                    <a href="paginas/reservas.html#reservas" class="boton">
                         Reservar
                     </a>
 
@@ -241,9 +241,9 @@
                         Para niños de 6 a 10 años.
                     </p>
 
-                    <p class="precio-bicicleta">$8.000 / hora</p>
+                    <p>$8.000 / hora</p>
 
-                    <a href="paginas/reservas.html#reservas" class="boton-reservar">
+                    <a href="paginas/reservas.html#reservas" class="boton">
                         Reservar
                     </a>
 
@@ -260,9 +260,9 @@
                         Para dos personas; perfecta para pasear en pareja.
                     </p>
 
-                    <p class="precio-bicicleta">$20.000 / hora</p>
+                    <p>$20.000 / hora</p>
 
-                    <a href="paginas/reservas.html#reservas" class="boton-reservar">
+                    <a href="paginas/reservas.html#reservas" class="boton">
                         Reservar
                     </a>
 
@@ -308,7 +308,7 @@
                 </li>
             </ol>
 
-            <a href="paginas/reservas.html" class="boton reservar">
+            <a href="paginas/reservas.html" class="boton">
                 Comenzar mi reserva
             </a>
 
@@ -363,7 +363,12 @@
 
 
     <footer>
-        <p>&copy; 2026 Rueda Libre | hola@ruedalibre.example</p>
+        <div class="pie-contenedor">
+            <div><h2>Rueda Libre</h2><p>Descubre Medellín sobre dos ruedas.</p></div>
+            <div><h3>Contacto</h3><p><a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></p></div>
+            <div><h3>Horarios</h3><p>Lunes a viernes: 7:00 a. m. a 7:00 p. m.</p><p>Fines de semana: 6:00 a. m. a 2:00 p. m.</p></div>
+        </div>
+        <p class="derechos">&copy; 2026 Rueda Libre. Proyecto académico.</p>
     </footer>
 
 </body>

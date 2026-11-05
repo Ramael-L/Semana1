@@ -20,8 +20,8 @@
         <nav aria-label="Navegación principal">
             <ul>
                 <li><a href="../index.html">Inicio</a></li>
-                <li><a href="reservas.html" aria-current="page">Reservas</a></li>
                 <li><a href="tarifas.html">Tarifas y rutas</a></li>
+                <li><a href="reservas.html" aria-current="page">Reservas</a></li>
             </ul>
         </nav>
     </header>
@@ -29,50 +29,76 @@
     <main>
         <section id="horarios">
             <h2>Horarios de atención</h2>
-            <p>En Rueda Libre nos preocupamos por la integridad de nuestros usuarios. Estamos disponibles de 7:00 a. m. a 6:00 p. m. los lunes y martes, y de 11:00 a. m. a 8:00 p. m. de miércoles a viernes. También trabajamos los días festivos.</p>
-            <div class="tabla-contenedor">
-                <table class="horarios">
-                    <thead>
-                        <tr>
-                            <th scope="col">Días disponibles</th>
-                            <th scope="col">Lunes</th>
-                            <th scope="col">Martes</th>
-                            <th scope="col">Miércoles</th>
-                            <th scope="col">Jueves</th>
-                            <th scope="col">Viernes</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><th scope="row">Apertura</th><td>7:00 a. m.</td><td>7:00 a. m.</td><td>11:00 a. m.</td><td>11:00 a. m.</td><td>11:00 a. m.</td></tr>
-                        <tr><th scope="row">Cierre</th><td>6:00 p. m.</td><td>6:00 p. m.</td><td>8:00 p. m.</td><td>8:00 p. m.</td><td>8:00 p. m.</td></tr>
-                    </tbody>
-                </table>
-            </div>
+            <p>En Rueda Libre nos preocupamos por la integridad de nuestros usuarios. Estamos disponibles de 7:00 a. m. a 7:00 p. m. de lunes a viernes, y de 6:00 a.m a 2:00 p.m </p>
+                        <dl>
+                          <dt>Lunes a viernes</dt>
+                          <dd>7:00 a. m. - 7:00 p. m </dd>
+                          <dt>Sábados y domingos</dt>
+                          <dd>6:00 a. m. - 2:00 p. m</dd>
+                        </dl> 
+
         </section>
 
         <section id="reservas">
             <h2>Formulario de reservas</h2>
-            <form action="" method="post">
+            <form action="#reservas" method="post" onsubmit="event.preventDefault(); alert('Demostración académica: no se envió ninguna reserva.');">
+                <fieldset>
+                    <legend>Tus datos</legend>
                 <div class="campo-formulario"><label for="nombre">Nombre completo:</label><input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" minlength="3" required></div>
                 <div class="campo-formulario"><label for="correo">Correo electrónico:</label><input type="email" id="correo" name="correo" autocomplete="email" required></div>
                 <div class="campo-formulario"><label for="documento">Documento de identidad:</label><input type="text" id="documento" name="documento" pattern="[0-9]{6,10}" title="Ingresa entre 6 y 10 dígitos" required></div>
                 <div class="campo-formulario"><label for="telefono">Teléfono:</label><input type="tel" id="telefono" name="telefono" pattern="3[0-9]{9}" title="Ingresa 10 dígitos y comienza por 3" required></div>
+                </fieldset>
+                
+
+                <fieldset>
+                    <legend>Fecha y bicicleta</legend>
                 <div class="campo-formulario"><label for="fecha">Fecha de reserva:</label><input type="date" id="fecha" name="fecha" min="2026-11-01" max="2026-12-31" required></div>
                 <div class="campo-formulario"><label for="hora">Hora de reserva:</label><input type="time" id="hora" name="hora" required></div>
                 <div class="campo-formulario"><label for="bicicleta">Tipo de bicicleta:</label><select id="bicicleta" name="bicicleta" required><option value="">Selecciona una bicicleta</option><option value="urbana">Urbana</option><option value="montaña">Montaña</option><option value="eléctrica">Eléctrica</option></select></div>
                 <div class="campo-formulario"><label for="cantidad">Cantidad de bicicletas:</label><input type="number" id="cantidad" name="cantidad" min="1" max="6" required></div>
+                </fieldset>
+
                 <fieldset>
                     <legend>Selecciona tu plan:</legend>
                     <label><input type="radio" name="plan" value="1 hora" required> 1 hora</label>
                     <label><input type="radio" name="plan" value="medio día"> Medio día (4 horas)</label>
                     <label><input type="radio" name="plan" value="día completo"> Día completo</label>
                 </fieldset>
-                <div class="campo-formulario"><label for="comentarios">Comentarios adicionales:</label><textarea id="comentarios" name="comentarios" rows="3" maxlength="300" placeholder="Escribe tus solicitudes especiales"></textarea></div>
-                <div class="campo-formulario"><label><input type="checkbox" id="terminos" name="terminos" required> Acepto los términos y condiciones</label></div>
-                <div class="acciones-formulario"><button type="reset">Limpiar formulario</button><button type="submit">Reservar</button></div>
+
+                <div class="campo">
+
+                <label for="recorrido">Recorrido preferido:</label>
+                <select id="recorrido" name="recorrido" required>
+                    <option value="">Selecciona un recorrido</option>
+                    <option value="ninguno">Ninguno (solo alquiler)</option>
+                    <option value="ruta-1">Rio y Parques</option>
+                    <option value="ruta-2">Sabores de Barrio</option>
+                    <option value="ruta-3">Reto Las Palmas</option>
+                </select>
+
+
+
+
+
+
+
+                </div>
+
+                <div class="campo-formulario"><label for="comentarios">Comentarios (opcional):</label><textarea id="comentarios" name="comentarios" rows="4" placeholder="Cuéntanos si necesitas algo especial"></textarea></div>
+                <label class="aceptacion"><input type="checkbox" name="acepta" required> Acepto el tratamiento de mis datos para esta solicitud académica.</label>
+                <p class="nota">Este formulario es una demostración: no guarda ni envía reservas reales. No ingreses datos personales reales.</p>
+                <button type="submit" class="boton">Revisar solicitud</button>
             </form>
         </section>
     </main>
-    <footer><p>&copy; 2026 Rueda Libre | hola@ruedalibre.example</p></footer>
+    <footer>
+        <div class="pie-contenedor">
+            <div><h2>Rueda Libre</h2><p>Descubre Medellín sobre dos ruedas.</p></div>
+            <div><h3>Contacto</h3><p><a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></p></div>
+            <div><h3>Horarios</h3><p>Lunes a viernes: 7:00 a. m. a 7:00 p. m.</p><p>Fines de semana: 6:00 a. m. a 2:00 p. m.</p></div>
+        </div>
+        <p class="derechos">&copy; 2026 Rueda Libre. Proyecto académico.</p>
+    </footer>
 </body>
 </html>

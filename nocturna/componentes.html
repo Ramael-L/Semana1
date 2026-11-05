@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+  <title>
+   Componentes | Rueda Nocturna
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+ </head>
+ <body class="bg-[#FAF6EF] p-6 text-[#1d2f45] dark:bg-[#101d32] dark:text-white">
+  <main class="mx-auto max-w-5xl space-y-8">
+   <h1 class="text-3xl font-bold">
+    Kit de componentes
+   </h1>
+   <section class="space-y-3">
+    <h2 class="text-2xl font-bold">
+     Botones
+    </h2>
+    <div class="flex flex-wrap gap-4">
+     <a class="inline-block rounded-lg bg-[#1e7a4f] px-5 py-3 font-semibold text-white
+             hover:bg-[#1d2f45] focus-visible:outline focus-visible:outline-4
+             focus-visible:outline-offset-2 focus-visible:outline-[#FFD166]" href="#ejemplo">
+      Principal
+     </a>
+     <a class="inline-block rounded-lg bg-[#FFD166] px-5 py-3 font-semibold text-[#1d2f45]
+             hover:bg-white focus-visible:outline focus-visible:outline-4
+             focus-visible:outline-[#1e7a4f]" href="#ejemplo">
+      Secundario
+     </a>
+     <a class="inline-block rounded-lg border-2 border-[#1e7a4f] px-5 py-3 font-semibold
+             text-[#1e7a4f] hover:bg-[#1e7a4f] hover:text-white focus-visible:outline
+             focus-visible:outline-4 focus-visible:outline-[#FFD166] dark:text-white" href="#ejemplo">
+      Contorno
+     </a>
+    </div>
+   </section>
+   <section>
+    <h2 class="mb-4 text-2xl font-bold">
+     Tarjeta de ruta
+    </h2>
+    <div class="max-w-sm">
+     <article class="overflow-hidden rounded-xl border border-[#1e7a4f] bg-white shadow-md
+             transition-shadow hover:shadow-xl dark:border-[#FFD166] dark:bg-[#1d2f45]">
+      <img alt="Recorrido nocturno en bicicleta" class="h-48 w-full object-cover" src="../img/imagen5.png"/>
+      <div class="space-y-3 p-5">
+       <span class="inline-block rounded-full bg-[#FFD166] px-3 py-1 text-sm font-semibold text-[#1d2f45]">
+        Nivel: Fácil
+       </span>
+       <h3 class="text-xl font-bold">
+        Luces del Centro
+       </h3>
+       <dl class="space-y-1">
+        <div>
+         <dt class="text-sm opacity-75">
+          Distancia
+         </dt>
+         <dd class="font-semibold">
+          10 km
+         </dd>
+        </div>
+        <div>
+         <dt class="text-sm opacity-75">
+          Duración
+         </dt>
+         <dd class="font-semibold">
+          2 h
+         </dd>
+        </div>
+        <div>
+         <dt class="text-sm opacity-75">
+          Encuentro
+         </dt>
+         <dd class="font-semibold">
+          Sede Rueda Libre
+         </dd>
+        </div>
+       </dl>
+       <p class="text-2xl font-bold">
+        $55.000
+       </p>
+       <a class="inline-block rounded-lg bg-[#1e7a4f] px-5 py-3 font-semibold text-white
+             hover:bg-[#1d2f45] focus-visible:outline focus-visible:outline-4
+             focus-visible:outline-offset-2 focus-visible:outline-[#FFD166]" href="#inscripcion">
+        Inscríbete
+       </a>
+      </div>
+     </article>
+    </div>
+   </section>
+   <section class="space-y-3">
+    <h2 class="text-2xl font-bold">
+     Alertas
+    </h2>
+    <p class="rounded-lg border border-[#002574] bg-white p-3 text-[#002574]">
+     Información: revisa la ruta antes de salir.
+    </p>
+    <p class="rounded-lg bg-[#1e7a4f] p-3 text-white">
+     Éxito: formulario validado.
+    </p>
+    <p class="rounded-lg bg-[#FFD166] p-3 text-[#1d2f45]">
+     Atención: usa luces y casco.
+    </p>
+   </section>
+   <section class="max-w-md space-y-4" id="ejemplo">
+    <h2 class="text-2xl font-bold">
+     Campo de formulario
+    </h2>
+    <label class="block" for="correo">
+     Correo electrónico
+    </label>
+    <input class="w-full rounded-lg border border-[#1e7a4f] bg-white p-3 text-[#1d2f45]
+             focus-visible:outline focus-visible:outline-4
+             focus-visible:outline-[#FFD166]" id="correo" placeholder="correo@ejemplo.com" type="email"/>
+   </section>
+  </main>
+ </body>
+</html>
