@@ -1,16 +1,26 @@
 /* Rueda Libre: estilos compartidos, sencillos y reutilizables */
+/* Rueda Libre: estilos compartidos, sencillos y reutilizables */
 :root {
     --verde-ruta: #1e7a4f;
-    --naranja-pedal: #9a5a0d;
-    --azul-noche: #002574;
-    --crema: #875600;
-    --gris-asfalto: #1d2f45;
-    --fondo: #faf6ef;
+    --naranja-pedal: #F39A2B;
+    --azul-noche: #14213D;
+    --crema: #FAF6EF;
+    --gris-asfalto: #1e7e4f;
+    --fondo: #FAF6EF;
     --texto: #344354;
     --blanco: #fff;
+    --color-aux-1: #166b42;
+    --color-aux-2: #eaf5ed;
+    --color-aux-3: #f0f7ef;
+    --color-aux-4: #9aa7ac;
+    --color-aux-5: #d4dbd8;
+    --color-aux-6: #cbd5d1;
+    --color-aux-7: #104d30;
+    --color-aux-8: #edf4ef;
+    --color-aux-9: #0003;
     --espacio: 1rem;
     --radio: 8px;
-    --ancho: 1100px;
+    --ancho: 68.75rem;
     --fuente-texto: "Open Sans", sans-serif;
     --fuente-titulo: Montserrat, sans-serif;
 }
@@ -100,7 +110,7 @@ nav a {
     font-weight: 600;
 }
 
-nav a:hover, nav a[aria-current="page"] {
+nav a:hover, nav a[aria-current="page"], nav a.activo {
     background: var(--verde-ruta);
     color: var(--blanco);
 }
@@ -139,7 +149,7 @@ section > h2 {
 
 .servicio, .tarjeta-bicicleta, aside, fieldset {
     padding: var(--espacio);
-    border: 1px solid #d4dbd8;
+    border: 1px solid var(--color-aux-5);
     border-radius: var(--radio);
     background: var(--blanco);
 }
@@ -175,7 +185,7 @@ caption {
 }
 
 th, td {
-    border: 1px solid #cbd5d1;
+    border: 1px solid var(--color-aux-6);
     text-align: left;
     padding: .7rem;
 }
@@ -212,7 +222,7 @@ legend {
 input:not([type="radio"]):not([type="checkbox"]), select, textarea {
     width: 100%;
     padding: .65rem;
-    border: 1px solid #9aa7ac;
+    border: 1px solid var(--color-aux-4);
     border-radius: var(--radio);
     font: inherit;
 }
@@ -281,3 +291,190 @@ footer h2, footer h3, footer a {
         margin-bottom: .5rem;
     }
 }
+
+
+/* Contenedor de las flores */
+.particulas {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+/* Estilo general */
+.flor {
+    position: absolute;
+    width: clamp(220px, 8vw, 100px);
+    opacity: 0.70;
+    animation: flotar 8s ease-in-out infinite alternate;
+}
+
+/* Posiciones */
+.flor-1 {
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.flor-2 {
+    top: 30%;
+    right: 8%;
+    animation-delay: 2s;
+}
+
+.flor-3 {
+    top: 55%;
+    left: 12%;
+    animation-delay: 4s;
+}
+
+.flor-4 {
+    bottom: 15%;
+    right: 15%;
+    animation-delay: 1s;
+}
+
+.flor-5 {
+    bottom: 8%;
+    left: 45%;
+    animation-delay: 3s;
+}
+
+/* Movimiento */
+@keyframes flotar {
+    from {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    to {
+        transform: translateY(-16px) rotate(12deg);
+    }
+}
+
+/* Mantener el contenido por encima */
+body > header,
+body > main,
+body > footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    .flor {
+        animation: none;
+    }
+}
+
+/* Mejoras finales: secciones, beneficios, promociones y accesibilidad */
+main > section {
+    padding: 1.5rem;
+    border-radius: 16px;
+}
+main > section:nth-of-type(odd) {
+    background: rgba(255, 255, 255, .76);
+}
+main > section:first-child {
+    padding: clamp(1.5rem, 4vw, 3rem);
+    background: var(--color-aux-2);
+    border-left: .35rem solid var(--verde-ruta);
+}
+.servicio, .tarjeta-bicicleta {
+    box-shadow: 0 5px 18px rgba(29, 47, 69, .08);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+.servicio:hover, .tarjeta-bicicleta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(29, 47, 69, .13);
+}
+.tarjeta-bicicleta {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.tarjeta-bicicleta .boton { margin-top: auto; text-align: center; }
+.etiqueta-nuevo {
+    position: absolute;
+    top: .75rem;
+    right: .75rem;
+    padding: .25rem .7rem;
+    border-radius: 1rem;
+    background: var(--azul-noche);
+    color: var(--blanco);
+    font-weight: 700;
+    font-size: .8rem;
+}
+.seccion-beneficios {
+    padding: clamp(1.5rem, 4vw, 3rem);
+    text-align: center;
+    background: var(--color-aux-8);
+}
+.seccion-beneficios ul { text-align: left; max-width: 620px; margin: 1rem auto 2rem; }
+.seccion-beneficios .imagen-beneficios {
+    display: block;
+    width: 100%;
+    max-width: 980px;
+    height: clamp(230px, 42vw, 470px);
+    object-fit: cover;
+    object-position: center;
+    border-radius: 18px;
+    margin: auto;
+    box-shadow: 0 10px 28px rgba(29, 47, 69, .16);
+}
+/* Las promociones están todas visibles: esta versión no utiliza JavaScript. */
+.promociones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+    gap: 1rem;
+}
+.promocion {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    padding: 1rem;
+    background: var(--color-aux-3);
+    border-radius: var(--radio);
+}
+.promocion img {
+    width: 100%;
+    height: 11rem;
+    object-fit: contain;
+}
+.promocion h3 { margin: 0; }
+.promocion .boton { margin-top: auto; text-align: center; }
+.whatsapp {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 5;
+    background: var(--color-aux-1);
+    color: var(--blanco);
+    padding: .75rem 1.1rem;
+    border-radius: 999px;
+    font-weight: 700;
+    box-shadow: 0 4px 15px var(--color-aux-9);
+    text-decoration: none;
+}
+.whatsapp:hover { background: var(--color-aux-7); color: var(--blanco); }
+footer { padding-bottom: 4.5rem; }
+.aviso-documento { padding: 1rem; border-left: .3rem solid var(--verde-ruta); background: var(--color-aux-2); border-radius: .5rem; }
+.politicas { margin: 1rem 0; padding: 1rem; border: 1px solid var(--color-aux-5); border-radius: 8px; background: var(--blanco); }
+.politicas summary { cursor: pointer; font-weight: 700; color: var(--azul-noche); }
+img { max-width: 100%; }
+@media (max-width: 600px) {
+    main > section { padding: 1rem; }
+    .seccion-beneficios .imagen-beneficios { height: 240px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .servicio, .tarjeta-bicicleta { transition: none; }
+    .servicio:hover, .tarjeta-bicicleta:hover { transform: none; }
+}
+
+/* Accesibilidad del formulario y fin de página */
+.grupo-plan label { display: inline-flex; gap: .4rem; align-items: center; margin-right: 1rem; }
+#reservas form { max-width: 42rem; margin-inline: auto; }
+#reservas form fieldset { margin-bottom: 1rem; }
+#reservas form .nota { font-size: .9rem; }
+.whatsapp:focus-visible { outline: 3px solid var(--azul-noche); outline-offset: 3px; }
