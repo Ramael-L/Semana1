@@ -48,9 +48,9 @@ El código 404 Not Found indica que el servidor no encontró el recurso solicita
 
 Nota: los códigos 200 y 404 corresponden a los resultados esperados de las pruebas; se deben confirmar en Network y registrar los valores observados.
 
-### 3. Funciones de HTML, CSS y JavaScript
+3. Funciones de HTML, CSS y JavaScript
 
-**HTML — Estructura**
+HTML — Estructura
 
 HTML permite organizar el contenido de una página web mediante etiquetas.
 
@@ -545,50 +545,3 @@ npx @tailwindcss/cli -i ./src/input.css -o ./css/tailwind-output.css --watch
 | Responsive | Grid y breakpoints | Prefijos responsive |
 | Uso | Interfaces con componentes preparados | Interfaces personalizadas |
 
-Ambos frameworks permiten desarrollar sitios adaptables. La elección depende de las necesidades del proyecto y del nivel de personalización requerido.
-
-
-
-Aprendisajes 
-
-Durante el desarrollo de Rueda Libre se estudia la importancia de separar la estructura, la presentación y la interactividad de una página web.
-
-También se reconoce que:
-
-1. HTML debe mantener una estructura semántica y accesible.
-2. CSS permite construir una identidad visual consistente.
-3. Flexbox y Grid resuelven diferentes necesidades de distribución.
-4. Las rutas relativas permiten conectar correctamente documentos ubicados en diferentes carpetas.
-5. Los formularios requieren etiquetas, controles adecuados y validaciones.
-6. DevTools permite inspeccionar la estructura y detectar errores de carga.
-7. Bootstrap y Tailwind ofrecen enfoques diferentes para construir interfaces.
-8. Git permite mantener un historial de los cambios realizados.
-9. realize una mini version de Bootstrap y de tailwind para probar funcionalidades no queria dañar mi pagina 
-10 re organize varias veces el css por que me parecio complejo definir los parametros como primera experiencia pero fue entretenido 
-
-
-
-Los siguientes puntos deben comprobarse sobre la versión final del proyecto:
-
-- [ ] Confirmar la URL, el protocolo, el host, el puerto y la ruta desde Network.
-- [ ] Confirmar los estados HTTP 200 y 404.
-- [ ] Verificar la jerarquía semántica de las tres páginas.
-- [ ] Comprobar que las imágenes tengan rutas válidas y textos alternativos.
-- [ ] Verificar las dos tablas y sus encabezados accesibles.
-- [ ] Comprobar los enlaces y las rutas relativas desde las tres páginas.
-- [ ] Ejecutar las ocho pruebas del formulario.
-- [ ] Recorrer el formulario utilizando únicamente el teclado.
-- [ ] Comprobar el diseño en diferentes tamaños de pantalla.
-- [ ] Verificar las prácticas de Bootstrap y Tailwind en el navegador.
-- [ ] Confirmar que Tailwind CLI genera el archivo CSS correctamente.
-- [ ] Actualizar este registro con los resultados reales de las pruebas.
-
-
-=== ACTUALIZACIÓN DEL PROYECTO · 5 DE NOVIEMBRE DE 2026 ===
-Objetivo: ordenar y hacer comprensible Rueda Libre sin cambiar los contenidos esenciales.
-HTML: se corrigió el enlace de bienvenida, el identificador de la flota, la agrupación de servicios, el cierre incorrecto del aside en reservas y la letra S accidental. Se normalizaron títulos, tablas con contenedor desplazable y pies de página compartidos en las tres páginas.
-CSS: se reemplazó la hoja anterior por un archivo más corto con variables en :root. Las variables --verde-ruta, --gris-asfalto, --radio, --espacio y --ancho se reutilizan en distintos elementos. Flexbox distribuye la cabecera; Grid organiza las tarjetas y el pie; la media query adapta la cabecera para celular.
-Formulario: se agregaron comentarios, autorización y un aviso de demostración. No existe servidor para recibir reservas; al enviar, solo aparece un aviso. Los datos no se almacenan ni se envían.
-Rueda Nocturna: se crearon prototipo.html, index.html y componentes.html con utilidades Tailwind cargadas mediante Play CDN (instrucción del profesor). No se instaló CLI ni se generó output.css. Por tanto, los requisitos exclusivos de CLI, @theme y @apply no están cumplidos con esta modalidad.
-Diferencia entre Bootstrap y Tailwind: Bootstrap ofrece componentes prediseñados; Tailwind permite componer estilos usando utilidades directamente. El enlace principal utiliza clases de fondo, padding, redondeo, hover y foco de Tailwind; no se implementó un botón de Bootstrap en esta entrega por indicación del profesor.
-Pendiente: probar visualmente en el navegador a 360, 768, 1024 y 1280 px; comprobar con teclado y lector de pantalla; confirmar el enlace real de Maps, correo y horarios; publicar en GitHub Pages y entregar URL. No se reportan estas pruebas como realizadas.

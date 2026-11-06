@@ -133,6 +133,7 @@ section > h2 {
     font: 600 1rem var(--fuente-texto);
     text-decoration: none;
     cursor: pointer;
+    
 }
 
 .boton:hover, button[type="submit"]:hover {

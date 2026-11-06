@@ -21,14 +21,15 @@
 
 <body>
 
-    <header class="encabezado">
-        <div aria-hidden="true" class="particulas">
-   <img alt="" class="flor flor-1" src="../img/imagen15.png.png"/>
-   <img alt="" class="flor flor-2" src="../img/imagen.16.png"/>
-   <img alt="" class="flor flor-3" src="../img/imagen.17.png"/>
-   <img alt="" class="flor flor-4" src="../img/imagen.18.png"/>
-   <img alt="" class="flor flor-5" src="../img/imagen.19.png"/>
+    <div aria-hidden="true" class="particulas">
+   <img alt="" class="flor flor-1" src="img/imagen15.png.png"/>
+   <img alt="" class="flor flor-2" src="img/imagen.16.png"/>
+   <img alt="" class="flor flor-3" src="img/imagen.17.png"/>
+   <img alt="" class="flor flor-4" src="img/imagen.18.png"/>
+   <img alt="" class="flor flor-5" src="img/imagen.19.png"/>
   </div>
+
+    <header class="encabezado">
         <div class="marca">
             <h1>Rueda Libre</h1>
             <p>Descubre Medellín sobre dos ruedas</p>
@@ -37,8 +38,8 @@
         <img class="logo-rueda" src="img/imagen.4.png" alt="Imagen representativa de Rueda Libre">
 
         <nav aria-label="Navegación principal">
-            <ul>
-                <li><a href="index.html" aria-current="page">Inicio</a></li>
+            <ul id="menu">
+                <li><a href="index.html" class="activo" aria-current="page">Inicio</a></li>
                 <li><a href="paginas/tarifas.html">Tarifas y rutas</a></li>
                 <li><a href="paginas/reservas.html">Reservas</a></li>
                 
@@ -89,7 +90,7 @@
 
                 <img class="imagen-servicio" src="img/imagen5.png" alt="Bicicleta disponible para alquiler">
 
-                <a href="paginas/tarifas.html">Consultar tarifas</a>
+                <a href="paginas/tarifas.html" class="boton">Consultar tarifas</a>
 
             </article>
 
@@ -104,7 +105,7 @@
 
                 <img class="imagen-servicio" src="img/imagen6.png" alt="Persona disfrutando un recorrido en bicicleta">
 
-                <a href="paginas/tarifas.html#recorridos">
+                <a href="paginas/tarifas.html#recorridos" class="boton">
                     Consultar recorridos
                 </a>
 
@@ -121,7 +122,7 @@
 
                 <img class="imagen-servicio" src="img/imagen14.png" alt="Taller de mantenimiento de bicicletas">
 
-                <a href="paginas/tarifas.html">
+                <a href="paginas/tarifas.html" class="boton" >
                     Conocer más
                 </a>
 
@@ -222,6 +223,8 @@
                 <article class="tarjeta-bicicleta">
 
                     <img class="imagen-bicicleta" src="img/imagen11.png" alt="Bicicleta Eléctrica Urbana">
+
+                    <span class="etiqueta-nuevo">Nuevo</span>
 
                     <h3>Eléctrica Urbana</h3>
 
@@ -324,7 +327,7 @@
 
         <!-- BENEFICIOS -->
 
-        <section id="beneficios">
+        <section id="beneficios" class="seccion-beneficios">
 
             <h2>Beneficios</h2>
 
@@ -377,6 +380,8 @@
         </div>
         <p class="derechos">&copy; 2026 Rueda Libre. Proyecto académico.</p>
     </footer>
+
+    <a class="whatsapp" href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer">WhatsApp</a>
 
 </body>
 
