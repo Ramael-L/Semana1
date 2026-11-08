@@ -1,122 +1,296 @@
 <!DOCTYPE html>
 <html lang="es">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1" name="viewport"/>
-  <link href="https://fonts.googleapis.com" rel="preconnect"/>
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
-  <title>
-   Componentes | Rueda Nocturna
-  </title>
-  <script src="https://cdn.tailwindcss.com">
-  </script>
- </head>
- <body class="bg-[#FAF6EF] p-6 text-[#1d2f45] dark:bg-[#101d32] dark:text-white">
-  <main class="mx-auto max-w-5xl space-y-8">
-   <h1 class="text-3xl font-bold">
-    Kit de componentes
-   </h1>
-   <section class="space-y-3">
-    <h2 class="text-2xl font-bold">
-     Botones
-    </h2>
-    <div class="flex flex-wrap gap-4">
-     <a class="inline-block rounded-lg bg-[#1e7a4f] px-5 py-3 font-semibold text-white
-             hover:bg-[#1d2f45] focus-visible:outline focus-visible:outline-4
-             focus-visible:outline-offset-2 focus-visible:outline-[#FFD166]" href="#ejemplo">
-      Principal
-     </a>
-     <a class="inline-block rounded-lg bg-[#FFD166] px-5 py-3 font-semibold text-[#1d2f45]
-             hover:bg-white focus-visible:outline focus-visible:outline-4
-             focus-visible:outline-[#1e7a4f]" href="#ejemplo">
-      Secundario
-     </a>
-     <a class="inline-block rounded-lg border-2 border-[#1e7a4f] px-5 py-3 font-semibold
-             text-[#1e7a4f] hover:bg-[#1e7a4f] hover:text-white focus-visible:outline
-             focus-visible:outline-4 focus-visible:outline-[#FFD166] dark:text-white" href="#ejemplo">
-      Contorno
-     </a>
-    </div>
-   </section>
-   <section>
-    <h2 class="mb-4 text-2xl font-bold">
-     Tarjeta de ruta
-    </h2>
-    <div class="max-w-sm">
-     <article class="overflow-hidden rounded-xl border border-[#1e7a4f] bg-white shadow-md
-             transition-shadow hover:shadow-xl dark:border-[#FFD166] dark:bg-[#1d2f45]">
-      <img alt="Recorrido nocturno en bicicleta" class="h-48 w-full object-cover" src="../img/imagen5.png"/>
-      <div class="space-y-3 p-5">
-       <span class="inline-block rounded-full bg-[#FFD166] px-3 py-1 text-sm font-semibold text-[#1d2f45]">
-        Nivel: Fácil
-       </span>
-       <h3 class="text-xl font-bold">
-        Luces del Centro
-       </h3>
-       <dl class="space-y-1">
-        <div>
-         <dt class="text-sm opacity-75">
-          Distancia
-         </dt>
-         <dd class="font-semibold">
-          10 km
-         </dd>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Componentes | Rueda Nocturna</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#101d32] text-white">
+
+    <header class="bg-[#1d2f45] px-5 py-6">
+
+        <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4">
+
+            <h1 class="text-2xl font-bold text-[#FFD166]">
+                Kit de componentes
+            </h1>
+
+            <a href="index.html"
+                class="rounded-lg bg-[#FFD166] px-5 py-2 font-semibold text-[#1d2f45] hover:bg-white focus-visible:outline focus-visible:outline-4 focus-visible:outline-white">
+
+                Volver a Rueda Nocturna
+
+            </a>
+
         </div>
-        <div>
-         <dt class="text-sm opacity-75">
-          Duración
-         </dt>
-         <dd class="font-semibold">
-          2 h
-         </dd>
-        </div>
-        <div>
-         <dt class="text-sm opacity-75">
-          Encuentro
-         </dt>
-         <dd class="font-semibold">
-          Sede Rueda Libre
-         </dd>
-        </div>
-       </dl>
-       <p class="text-2xl font-bold">
-        $55.000
-       </p>
-       <a class="inline-block rounded-lg bg-[#1e7a4f] px-5 py-3 font-semibold text-white
-             hover:bg-[#1d2f45] focus-visible:outline focus-visible:outline-4
-             focus-visible:outline-offset-2 focus-visible:outline-[#FFD166]" href="#inscripcion">
-        Inscríbete
-       </a>
-      </div>
-     </article>
-    </div>
-   </section>
-   <section class="space-y-3">
-    <h2 class="text-2xl font-bold">
-     Alertas
-    </h2>
-    <p class="rounded-lg border border-[#002574] bg-white p-3 text-[#002574]">
-     Información: revisa la ruta antes de salir.
-    </p>
-    <p class="rounded-lg bg-[#1e7a4f] p-3 text-white">
-     Éxito: formulario validado.
-    </p>
-    <p class="rounded-lg bg-[#FFD166] p-3 text-[#1d2f45]">
-     Atención: usa luces y casco.
-    </p>
-   </section>
-   <section class="max-w-md space-y-4" id="ejemplo">
-    <h2 class="text-2xl font-bold">
-     Campo de formulario
-    </h2>
-    <label class="block" for="correo">
-     Correo electrónico
-    </label>
-    <input class="w-full rounded-lg border border-[#1e7a4f] bg-white p-3 text-[#1d2f45]
-             focus-visible:outline focus-visible:outline-4
-             focus-visible:outline-[#FFD166]" id="correo" placeholder="correo@ejemplo.com" type="email"/>
-   </section>
-  </main>
- </body>
+
+    </header>
+
+    <main class="mx-auto max-w-6xl space-y-12 px-5 py-12">
+
+        <!-- SECCIÓN DE BOTONES -->
+
+        <section>
+
+            <h2 class="mb-6 text-2xl font-bold">
+                Botones
+            </h2>
+
+            <p class="mb-6">
+                Estos son los tres estilos de botones que utilizamos
+                en Rueda Nocturna.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-5">
+
+                <!-- BOTÓN PRINCIPAL -->
+
+                <a href="index.html#inscripcion"
+                    class="inline-block rounded-lg bg-[#1e7a4f] px-6 py-3 font-semibold text-white hover:bg-[#17613f] focus-visible:outline focus-visible:outline-4 focus-visible:outline-[#FFD166]">
+
+                    Principal
+
+                </a>
+
+                <!-- BOTÓN SECUNDARIO -->
+
+                <a href="index.html#rutas"
+                    class="inline-block rounded-lg bg-[#FFD166] px-6 py-3 font-semibold text-[#1d2f45] hover:bg-white focus-visible:outline focus-visible:outline-4 focus-visible:outline-white">
+
+                    Secundario
+
+                </a>
+
+                <!-- BOTÓN DE CONTORNO -->
+
+                <a href="index.html"
+                    class="inline-block rounded-lg border-2 border-[#FFD166] px-6 py-3 font-semibold text-[#FFD166] hover:bg-[#FFD166] hover:text-[#1d2f45] focus-visible:outline focus-visible:outline-4 focus-visible:outline-white">
+
+                    Contorno
+
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- SECCIÓN DE TARJETAS -->
+
+        <section>
+
+            <h2 class="mb-6 text-2xl font-bold">
+                Tarjeta de ruta
+            </h2>
+
+            <p class="mb-6">
+                Ejemplo de una tarjeta utilizada para presentar
+                los recorridos nocturnos.
+            </p>
+
+            <article class="max-w-sm overflow-hidden rounded-xl bg-[#1d2f45] shadow-lg hover:shadow-2xl">
+
+                <img src="../img/imagen5.png"
+                    alt="Bicicleta para un recorrido nocturno por el centro"
+                    class="h-48 w-full object-cover">
+
+                <div class="space-y-4 p-6">
+
+                    <h3 class="text-xl font-bold text-[#FFD166]">
+                        Luces del Centro
+                    </h3>
+
+                    <p>
+                        Descubre los lugares emblemáticos del centro
+                        de Medellín durante la noche.
+                    </p>
+
+                    <p>
+                        <strong>Distancia:</strong> 10 km
+                    </p>
+
+                    <p>
+                        <strong>Duración:</strong> 2 horas
+                    </p>
+
+                    <p>
+                        <strong>Nivel:</strong>
+
+                        <span class="rounded-lg bg-[#1e7a4f] px-3 py-1 text-sm text-white">
+                            Fácil
+                        </span>
+                    </p>
+
+                    <p>
+                        <strong>Encuentro:</strong> Sede Rueda Libre
+                    </p>
+
+                    <p class="text-2xl font-bold">
+                        $55.000
+                    </p>
+
+                    <a href="index.html#inscripcion"
+                        class="inline-block rounded-lg bg-[#1e7a4f] px-6 py-3 font-semibold text-white hover:bg-[#17613f] focus-visible:outline focus-visible:outline-4 focus-visible:outline-[#FFD166]">
+
+                        Inscríbete
+
+                    </a>
+
+                </div>
+
+            </article>
+
+        </section>
+
+        <!-- SECCIÓN DE ALERTAS -->
+
+        <section>
+
+            <h2 class="mb-6 text-2xl font-bold">
+                Alertas
+            </h2>
+
+            <p class="mb-6">
+                Las alertas permiten mostrar información,
+                confirmaciones y advertencias.
+            </p>
+
+            <div class="space-y-5">
+
+                <!-- ALERTA INFORMATIVA -->
+
+                <div class="rounded-lg border-l-4 border-blue-500 bg-blue-100 p-5 text-blue-900">
+
+                    <h3 class="mb-2 font-bold">
+                        Información
+                    </h3>
+
+                    <p>
+                        Revisa la información de tu ruta antes
+                        de comenzar el recorrido.
+                    </p>
+
+                </div>
+
+                <!-- ALERTA DE ÉXITO -->
+
+                <div role="status"
+                    class="rounded-lg border-l-4 border-green-600 bg-green-100 p-5 text-green-900">
+
+                    <h3 class="mb-2 font-bold">
+                        Éxito
+                    </h3>
+
+                    <p>
+                        Ejemplo de mensaje que confirma que
+                        un formulario fue validado correctamente.
+                    </p>
+
+                </div>
+
+                <!-- ALERTA DE ADVERTENCIA -->
+
+                <div class="rounded-lg border-l-4 border-yellow-500 bg-yellow-100 p-5 text-yellow-900">
+
+                    <h3 class="mb-2 font-bold">
+                        Advertencia
+                    </h3>
+
+                    <p>
+                        Recuerda utilizar casco, luces y elementos
+                        reflectivos durante el recorrido.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- SECCIÓN DE FORMULARIOS -->
+
+        <section>
+
+            <h2 class="mb-6 text-2xl font-bold">
+                Campos de formulario
+            </h2>
+
+            <p class="mb-6">
+                Estos campos muestran cómo deben verse las entradas
+                de información en nuestros formularios.
+            </p>
+
+            <div class="max-w-xl space-y-6 rounded-xl bg-[#1d2f45] p-6">
+
+                <!-- CORREO ELECTRÓNICO -->
+
+                <div>
+
+                    <label for="correo" class="mb-2 block font-semibold">
+                        Correo electrónico
+                    </label>
+
+                    <input type="email"
+                        id="correo"
+                        name="correo"
+                        placeholder="correo@ejemplo.com"
+                        aria-describedby="ayuda-correo"
+                        class="w-full rounded-lg border border-gray-400 bg-white p-3 text-[#1d2f45] focus-visible:outline focus-visible:outline-4 focus-visible:outline-[#FFD166]">
+
+                    <p id="ayuda-correo" class="mt-2 text-sm text-gray-300">
+                        Ingresa un correo electrónico válido.
+                    </p>
+
+                </div>
+
+                <!-- NÚMERO DE CELULAR -->
+
+                <div>
+
+                    <label for="celular" class="mb-2 block font-semibold">
+                        Número de celular
+                    </label>
+
+                    <input type="tel"
+                        id="celular"
+                        name="celular"
+                        placeholder="3001234567"
+                        pattern="3[0-9]{9}"
+                        maxlength="10"
+                        inputmode="numeric"
+                        aria-describedby="ayuda-celular"
+                        class="w-full rounded-lg border border-gray-400 bg-white p-3 text-[#1d2f45] focus-visible:outline focus-visible:outline-4 focus-visible:outline-[#FFD166]">
+
+                    <p id="ayuda-celular" class="mt-2 text-sm text-gray-300">
+                        Ingresa 10 números y comienza por 3.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+
+    <footer class="bg-[#1d2f45] px-5 py-8 text-center">
+
+        <p>
+            Kit de componentes de Rueda Nocturna.
+        </p>
+
+        <p class="mt-2 text-sm">
+            Proyecto académico - Riwi 2026
+        </p>
+
+    </footer>
+
+</body>
+
 </html>

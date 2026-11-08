@@ -1,291 +1,650 @@
 <!DOCTYPE html>
 <html lang="es">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1" name="viewport"/>
-  <link href="https://fonts.googleapis.com" rel="preconnect"/>
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
-  <title>
-   Rueda Nocturna | Rueda Libre
-  </title>
-  <script src="https://cdn.tailwindcss.com">
-  </script>
- </head>
- <body class="bg-[#FAF6EF] text-[#1d2f45] dark:bg-[#101d32] dark:text-white">
-  <header class="bg-[#1d2f45] px-5 py-5 text-white">
-   <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 md:flex-row">
-    <a class="text-2xl font-bold" href="../index.html">
-     Rueda Libre
-    </a>
-    <nav aria-label="Navegación nocturna" class="hidden gap-6 md:flex">
-     <a class="hover:underline" href="#inicio">
-      Inicio
-     </a>
-     <a class="hover:underline" href="#rutas">
-      Rutas
-     </a>
-     <a class="hover:underline" href="#pasos">
-      Cómo funciona
-     </a>
-    </nav>
-    <a class="inline-block rounded-lg bg-[#FFD166] px-5 py-3 font-semibold text-[#1d2f45]
-             hover:bg-white focus-visible:outline focus-visible:outline-4
-             focus-visible:outline-[#1e7a4f]" href="#inscripcion">
-     Inscríbete
-    </a>
-   </div>
-  </header>
-  <main>
-   <section class="bg-[#002574] px-5 py-16 text-white dark:bg-[#101d32] lg:py-24" id="inicio">
-    <div class="mx-auto max-w-6xl">
-     <p class="mb-4 inline-block rounded-full bg-[#FFD166] px-4 py-2 text-sm font-semibold text-[#1d2f45]">
-      Nuevo · Jueves a sábado
-     </p>
-     <h1 class="max-w-3xl text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
-      Rueda Nocturna
-     </h1>
-     <p class="my-6 max-w-2xl text-lg md:text-xl">
-      Descubre Medellín en bici cuando se encienden las luces.
-     </p>
-     <div class="mb-8 flex flex-wrap gap-4">
-      <p class="rounded-lg border border-white px-5 py-3">
-       <strong>
-        3 rutas
-       </strong>
-      </p>
-      <p class="rounded-lg border border-white px-5 py-3">
-       <strong>
-        Desde $55.000
-       </strong>
-      </p>
-     </div>
-     <a class="inline-block rounded-lg bg-[#FFD166] px-6 py-3 font-bold text-[#1d2f45]
-             hover:bg-white focus-visible:outline focus-visible:outline-4
-             focus-visible:outline-offset-4 focus-visible:outline-[#FFD166]" href="#inscripcion">
-      Inscríbete
-     </a>
-    </div>
-   </section>
-   <section class="px-5 py-14" id="rutas">
-    <div class="mx-auto max-w-6xl">
-     <h2 class="mb-6 text-3xl font-bold">
-      Rutas
-     </h2>
-     <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      <article class="overflow-hidden rounded-xl border border-[#1e7a4f] bg-white shadow-md
-             transition-shadow hover:shadow-xl dark:border-[#FFD166] dark:bg-[#1d2f45]">
-       <img alt="Recorrido nocturno en bicicleta" class="h-48 w-full object-cover" src="../img/imagen5.png"/>
-       <div class="space-y-3 p-5">
-        <span class="inline-block rounded-full bg-[#FFD166] px-3 py-1 text-sm font-semibold text-[#1d2f45]">
-         Nivel: Fácil
-        </span>
-        <h3 class="text-xl font-bold">
-         Luces del Centro
-        </h3>
-        <dl class="space-y-1">
-         <div>
-          <dt class="text-sm opacity-75">
-           Distancia
-          </dt>
-          <dd class="font-semibold">
-           10 km
-          </dd>
-         </div>
-         <div>
-          <dt class="text-sm opacity-75">
-           Duración
-          </dt>
-          <dd class="font-semibold">
-           2 h
-          </dd>
-         </div>
-         <div>
-          <dt class="text-sm opacity-75">
-           Encuentro
-          </dt>
-          <dd class="font-semibold">
-           Sede Rueda Libre
-          </dd>
-         </div>
-        </dl>
-        <p class="text-2xl font-bold">
-         $55.000
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Descubre Medellín de noche con los recorridos en bicicleta de Rueda Libre.">
+
+    <title>Rueda Nocturna | Rueda Libre</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-[#101d32] text-white">
+
+    <!-- ENCABEZADO -->
+
+    <header class="bg-[#1d2f45] px-5 py-6">
+
+        <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-6">
+
+            <a href="../index.html" class="text-2xl font-bold text-[#FFD166]">
+                Rueda Libre
+            </a>
+
+            <nav aria-label="Navegación nocturna">
+
+                <ul class="flex flex-wrap justify-center gap-5">
+
+                    <li>
+                        <a href="#inicio" class="hover:text-[#FFD166]">
+                            Inicio
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#rutas" class="hover:text-[#FFD166]">
+                            Rutas
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#pasos" class="hover:text-[#FFD166]">
+                            Cómo funciona
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#inscripcion" class="hover:text-[#FFD166]">
+                            Inscripción
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <main>
+
+        <!-- PRESENTACIÓN -->
+
+        <section id="inicio" class="bg-[#002574] px-5 py-20 text-center">
+
+            <div class="mx-auto max-w-4xl">
+
+                <p class="mb-5 inline-block rounded-full bg-[#FFD166] px-5 py-2 font-semibold text-[#1d2f45]">
+                    Jueves a sábado
+                </p>
+
+                <h1 class="mb-6 text-4xl font-bold md:text-6xl">
+                    Rueda Nocturna
+                </h1>
+
+                <p class="mb-8 text-lg">
+                    Descubre Medellín sobre dos ruedas mientras
+                    disfrutas de las luces y los paisajes de la ciudad.
+                </p>
+
+                <p class="mb-8 text-xl font-semibold">
+                    3 rutas disponibles | Desde $55.000
+                </p>
+
+                <a href="#inscripcion"
+                    class="inline-block rounded-lg bg-[#FFD166] px-8 py-3 font-bold text-[#1d2f45] hover:bg-white focus-visible:outline focus-visible:outline-4 focus-visible:outline-white">
+
+                    Inscríbete ahora
+
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- RUTAS NOCTURNAS -->
+
+        <section id="rutas" class="px-5 py-16">
+
+            <div class="mx-auto max-w-6xl">
+
+                <h2 class="mb-10 text-center text-3xl font-bold">
+                    Nuestras rutas nocturnas
+                </h2>
+
+                <div class="grid gap-8 md:grid-cols-3">
+
+                    <!-- RUTA 1 -->
+
+                    <article class="overflow-hidden rounded-xl bg-[#1d2f45] shadow-lg">
+
+                        <img src="../img/imagen5.png"
+                            alt="Bicicleta para un recorrido nocturno por el centro"
+                            class="h-48 w-full object-cover">
+
+                        <div class="space-y-4 p-6">
+
+                            <h3 class="text-xl font-bold text-[#FFD166]">
+                                Luces del Centro
+                            </h3>
+
+                            <p>
+                                Disfruta de las calles y los lugares
+                                emblemáticos del centro de Medellín.
+                            </p>
+
+                            <ul class="space-y-2">
+                                <li><strong>Distancia:</strong> 10 km</li>
+                                <li><strong>Duración:</strong> 2 horas</li>
+                                <li><strong>Nivel:</strong> Fácil</li>
+                                <li><strong>Encuentro:</strong> Sede Rueda Libre</li>
+                            </ul>
+
+                            <p class="text-2xl font-bold">
+                                $55.000
+                            </p>
+
+                            <a href="#inscripcion"
+                                class="inline-block rounded-lg bg-[#1e7a4f] px-6 py-3 font-semibold text-white hover:bg-[#17613f] focus-visible:outline focus-visible:outline-4 focus-visible:outline-[#FFD166]">
+
+                                Inscríbete
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                    <!-- RUTA 2 -->
+
+                    <article class="overflow-hidden rounded-xl bg-[#1d2f45] shadow-lg">
+
+                        <img src="../img/imagen6.png"
+                            alt="Recorrido en bicicleta por Medellín"
+                            class="h-48 w-full object-cover">
+
+                        <div class="space-y-4 p-6">
+
+                            <h3 class="text-xl font-bold text-[#FFD166]">
+                                Miradores de la Ciudad
+                            </h3>
+
+                            <p>
+                                Recorre diferentes sectores de Medellín
+                                y disfruta de sus paisajes nocturnos.
+                            </p>
+
+                            <ul class="space-y-2">
+                                <li><strong>Distancia:</strong> 16 km</li>
+                                <li><strong>Duración:</strong> 3 horas</li>
+                                <li><strong>Nivel:</strong> Medio</li>
+                                <li><strong>Encuentro:</strong> Sede Rueda Libre</li>
+                            </ul>
+
+                            <p class="text-2xl font-bold">
+                                $75.000
+                            </p>
+
+                            <a href="#inscripcion"
+                                class="inline-block rounded-lg bg-[#1e7a4f] px-6 py-3 font-semibold text-white hover:bg-[#17613f] focus-visible:outline focus-visible:outline-4 focus-visible:outline-[#FFD166]">
+
+                                Inscríbete
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                    <!-- RUTA 3 -->
+
+                    <article class="overflow-hidden rounded-xl bg-[#1d2f45] shadow-lg">
+
+                        <img src="../img/imagen13.png"
+                            alt="Ruta en bicicleta por una zona montañosa"
+                            class="h-48 w-full object-cover">
+
+                        <div class="space-y-4 p-6">
+
+                            <h3 class="text-xl font-bold text-[#FFD166]">
+                                Luna en Las Palmas
+                            </h3>
+
+                            <p>
+                                Una experiencia para ciclistas que
+                                disfrutan de los recorridos exigentes.
+                            </p>
+
+                            <ul class="space-y-2">
+                                <li><strong>Distancia:</strong> 22 km</li>
+                                <li><strong>Duración:</strong> 3,5 horas</li>
+                                <li><strong>Nivel:</strong> Difícil</li>
+                                <li><strong>Encuentro:</strong> Sede Rueda Libre</li>
+                            </ul>
+
+                            <p class="text-2xl font-bold">
+                                $95.000
+                            </p>
+
+                            <a href="#inscripcion"
+                                class="inline-block rounded-lg bg-[#1e7a4f] px-6 py-3 font-semibold text-white hover:bg-[#17613f] focus-visible:outline focus-visible:outline-4 focus-visible:outline-[#FFD166]">
+
+                                Inscríbete
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CÓMO FUNCIONA -->
+
+        <section id="pasos" class="bg-[#1d2f45] px-5 py-16">
+
+            <div class="mx-auto max-w-6xl">
+
+                <h2 class="mb-10 text-center text-3xl font-bold">
+                    ¿Cómo funciona?
+                </h2>
+
+                <ol class="grid gap-5 text-center md:grid-cols-4">
+
+                    <li class="rounded-lg border border-[#FFD166] p-6">
+                        <strong class="text-[#FFD166]">
+                            1. Elige tu ruta
+                        </strong>
+
+                        <p class="mt-3">
+                            Selecciona tu recorrido favorito.
+                        </p>
+                    </li>
+
+                    <li class="rounded-lg border border-[#FFD166] p-6">
+                        <strong class="text-[#FFD166]">
+                            2. Inscríbete
+                        </strong>
+
+                        <p class="mt-3">
+                            Completa tus datos en el formulario.
+                        </p>
+                    </li>
+
+                    <li class="rounded-lg border border-[#FFD166] p-6">
+                        <strong class="text-[#FFD166]">
+                            3. Recoge tu equipo
+                        </strong>
+
+                        <p class="mt-3">
+                            Prepárate para comenzar el recorrido.
+                        </p>
+                    </li>
+
+                    <li class="rounded-lg border border-[#FFD166] p-6">
+                        <strong class="text-[#FFD166]">
+                            4. Rueda
+                        </strong>
+
+                        <p class="mt-3">
+                            Disfruta de Medellín de noche.
+                        </p>
+                    </li>
+
+                </ol>
+
+            </div>
+
+        </section>
+
+        <!-- FORMULARIO NOCTURNO -->
+
+        <section id="inscripcion" class="bg-[#101d32] px-5 py-16">
+
+            <div class="mx-auto max-w-4xl">
+
+                <h2 class="mb-4 text-center text-3xl font-bold">
+                    Inscripción a Rueda Nocturna
+                </h2>
+
+                <p class="mb-10 text-center">
+                    Completa el formulario para preparar tu solicitud
+                    de inscripción a nuestros recorridos nocturnos.
+                </p>
+
+                <form action="#inscripcion" method="post"
+                    class="space-y-8 rounded-xl bg-[#1d2f45] p-6 shadow-lg md:p-10"
+                    onsubmit="event.preventDefault(); alert('Formulario validado. Esta es una demostración académica; no se enviaron los datos.');">
+
+                    <!-- DATOS PERSONALES -->
+
+                    <fieldset class="space-y-5">
+
+                        <legend class="mb-5 text-xl font-bold text-[#FFD166]">
+                            Datos personales
+                        </legend>
+
+                        <div class="grid gap-5 md:grid-cols-2">
+
+                            <div>
+                                <label for="nombre" class="mb-2 block">
+                                    Nombre completo
+                                </label>
+
+                                <input type="text"
+                                    id="nombre"
+                                    name="nombre"
+                                    minlength="3"
+                                    autocomplete="name"
+                                    required
+                                    placeholder="Escribe tu nombre"
+                                    class="w-full rounded-lg border border-gray-400 bg-white p-3 text-[#1d2f45] focus-visible:outline focus-visible:outline-4 focus-visible:outline-[#FFD166]">
+                            </div>
+
+                            <div>
+                                <label for="correo" class="mb-2 block">
+                                    Correo electrónico
+                                </label>
+
+                                <input type="email"
+                                    id="correo"
+                                    name="correo"
+                                    autocomplete="email"
+                                    required
+                                    placeholder="correo@ejemplo.com"
+                                    class="w-full rounded-lg border border-gray-400 bg-white p-3 text-[#1d2f45] focus-visible:outline focus-visible:outline-4 focus-visible:outline-[#FFD166]">
+                            </div>
+
+                            <div>
+                                <label for="celular" class="mb-2 block">
+                                    Número de celular
+                                </label>
+
+                                <input type="tel"
+                                    id="celular"
+                                    name="celular"
+                                    pattern="3[0-9]{9}"
+                                    title="Ingresa 10 números y comienza por 3"
+                                    maxlength="10"
+                                    inputmode="numeric"
+                                    autocomplete="tel"
+                                    required
+                                    placeholder="3001234567"
+                                    class="w-full rounded-lg border border-gray-400 bg-white p-3 text-[#1d2f45] focus-visible:outline focus-visible:outline-4 focus-visible:outline-[#FFD166]">
+                            </div>
+
+                        </div>
+
+                    </fieldset>
+
+                    <!-- DATOS DEL RECORRIDO -->
+
+                    <fieldset class="space-y-5">
+
+                        <legend class="mb-5 text-xl font-bold text-[#FFD166]">
+                            Información del recorrido
+                        </legend>
+
+                        <div class="grid gap-5 md:grid-cols-2">
+
+                            <div>
+                                <label for="ruta" class="mb-2 block">
+                                    Selecciona una ruta
+                                </label>
+
+                                <select id="ruta"
+                                    name="ruta"
+                                    required
+                                    class="w-full rounded-lg border border-gray-400 bg-white p-3 text-[#1d2f45] focus-visible:outline focus-visible:outline-4 focus-visible:outline-[#FFD166]">
+
+                                    <option value="">
+                                        Selecciona una opción
+                                    </option>
+
+                                    <option value="centro">
+                                        Luces del Centro
+                                    </option>
+
+                                    <option value="miradores">
+                                        Miradores de la Ciudad
+                                    </option>
+
+                                    <option value="palmas">
+                                        Luna en Las Palmas
+                                    </option>
+
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="dia" class="mb-2 block">
+                                    Día de salida
+                                </label>
+
+                                <select id="dia"
+                                    name="dia"
+                                    required
+                                    class="w-full rounded-lg border border-gray-400 bg-white p-3 text-[#1d2f45] focus-visible:outline focus-visible:outline-4 focus-visible:outline-[#FFD166]">
+
+                                    <option value="">
+                                        Selecciona un día
+                                    </option>
+
+                                    <option value="jueves">
+                                        Jueves
+                                    </option>
+
+                                    <option value="viernes">
+                                        Viernes
+                                    </option>
+
+                                    <option value="sabado">
+                                        Sábado
+                                    </option>
+
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="acompanantes" class="mb-2 block">
+                                    Número de acompañantes
+                                </label>
+
+                                <input type="number"
+                                    id="acompanantes"
+                                    name="acompanantes"
+                                    min="0"
+                                    max="3"
+                                    required
+                                    placeholder="De 0 a 3"
+                                    class="w-full rounded-lg border border-gray-400 bg-white p-3 text-[#1d2f45] focus-visible:outline focus-visible:outline-4 focus-visible:outline-[#FFD166]">
+                            </div>
+
+                            <div>
+                                <label for="experiencia" class="mb-2 block">
+                                    Nivel de experiencia
+                                </label>
+
+                                <select id="experiencia"
+                                    name="experiencia"
+                                    required
+                                    class="w-full rounded-lg border border-gray-400 bg-white p-3 text-[#1d2f45] focus-visible:outline focus-visible:outline-4 focus-visible:outline-[#FFD166]">
+
+                                    <option value="">
+                                        Selecciona tu nivel
+                                    </option>
+
+                                    <option value="principiante">
+                                        Principiante
+                                    </option>
+
+                                    <option value="intermedio">
+                                        Intermedio
+                                    </option>
+
+                                    <option value="avanzado">
+                                        Avanzado
+                                    </option>
+
+                                </select>
+                            </div>
+
+                        </div>
+
+                    </fieldset>
+
+                    <!-- BICICLETA PROPIA -->
+
+                    <fieldset>
+
+                        <legend class="mb-4 text-xl font-bold text-[#FFD166]">
+                            ¿Tienes bicicleta propia?
+                        </legend>
+
+                        <div class="flex flex-wrap gap-8">
+
+                            <label class="flex items-center gap-2">
+
+                                <input type="radio"
+                                    name="bicicleta_propia"
+                                    value="si"
+                                    required
+                                    class="h-4 w-4 accent-[#FFD166]">
+
+                                Sí
+
+                            </label>
+
+                            <label class="flex items-center gap-2">
+
+                                <input type="radio"
+                                    name="bicicleta_propia"
+                                    value="no"
+                                    required
+                                    class="h-4 w-4 accent-[#FFD166]">
+
+                                No
+
+                            </label>
+
+                        </div>
+
+                    </fieldset>
+
+                    <!-- CONDICIONES -->
+
+                    <fieldset>
+
+                        <legend class="mb-4 text-xl font-bold text-[#FFD166]">
+                            Condiciones de participación
+                        </legend>
+
+                        <label class="flex items-start gap-3">
+
+                            <input type="checkbox"
+                                name="condiciones"
+                                required
+                                class="mt-1 h-4 w-4 accent-[#FFD166]">
+
+                            <span>
+                                Acepto las condiciones de participación
+                                de Rueda Nocturna.
+                            </span>
+
+                        </label>
+
+                    </fieldset>
+
+                    <!-- ENVÍO -->
+
+                    <div class="text-center">
+
+                        <p class="mb-5 text-sm text-gray-300">
+                            Este formulario es una demostración académica.
+                            No almacena ni envía datos personales.
+                            Utiliza información de prueba.
+                        </p>
+
+                        <button type="submit"
+                            class="rounded-lg bg-[#FFD166] px-10 py-3 font-bold text-[#1d2f45] hover:bg-white focus-visible:outline focus-visible:outline-4 focus-visible:outline-white">
+
+                            Revisar inscripción
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+
+    <footer class="bg-[#1d2f45] px-5 py-10">
+
+        <div class="mx-auto grid max-w-6xl gap-8 text-center md:grid-cols-3">
+
+            <section>
+
+                <h2 class="mb-3 text-xl font-bold text-[#FFD166]">
+                    Rueda Libre
+                </h2>
+
+                <p>
+                    Descubre Medellín sobre dos ruedas.
+                </p>
+
+            </section>
+
+            <section>
+
+                <h2 class="mb-3 text-xl font-bold text-[#FFD166]">
+                    Contacto
+                </h2>
+
+                <a href="mailto:hola@ruedalibre.example"
+                    class="hover:underline">
+
+                    hola@ruedalibre.example
+
+                </a>
+
+            </section>
+
+            <section>
+
+                <h2 class="mb-3 text-xl font-bold text-[#FFD166]">
+                    Horarios
+                </h2>
+
+                <p>
+                    Jueves a sábado.
+                </p>
+
+                <p>
+                    Horarios por confirmar.
+                </p>
+
+            </section>
+
+        </div>
+
+        <p class="mt-10 text-center text-sm">
+            &copy; 2026 Rueda Libre. Proyecto académico.
         </p>
-        <a class="inline-block rounded-lg bg-[#1e7a4f] px-5 py-3 font-semibold text-white
-             hover:bg-[#1d2f45] focus-visible:outline focus-visible:outline-4
-             focus-visible:outline-offset-2 focus-visible:outline-[#FFD166]" href="#inscripcion">
-         Inscríbete
-        </a>
-       </div>
-      </article>
-      <article class="overflow-hidden rounded-xl border border-[#1e7a4f] bg-white shadow-md
-             transition-shadow hover:shadow-xl dark:border-[#FFD166] dark:bg-[#1d2f45]">
-       <img alt="Recorrido nocturno en bicicleta" class="h-48 w-full object-cover" src="../img/imagen6.png"/>
-       <div class="space-y-3 p-5">
-        <span class="inline-block rounded-full bg-[#FFD166] px-3 py-1 text-sm font-semibold text-[#1d2f45]">
-         Nivel: Medio
-        </span>
-        <h3 class="text-xl font-bold">
-         Miradores de la Ciudad
-        </h3>
-        <dl class="space-y-1">
-         <div>
-          <dt class="text-sm opacity-75">
-           Distancia
-          </dt>
-          <dd class="font-semibold">
-           16 km
-          </dd>
-         </div>
-         <div>
-          <dt class="text-sm opacity-75">
-           Duración
-          </dt>
-          <dd class="font-semibold">
-           3 h
-          </dd>
-         </div>
-         <div>
-          <dt class="text-sm opacity-75">
-           Encuentro
-          </dt>
-          <dd class="font-semibold">
-           Sede Rueda Libre
-          </dd>
-         </div>
-        </dl>
-        <p class="text-2xl font-bold">
-         $75.000
-        </p>
-        <a class="inline-block rounded-lg bg-[#1e7a4f] px-5 py-3 font-semibold text-white
-             hover:bg-[#1d2f45] focus-visible:outline focus-visible:outline-4
-             focus-visible:outline-offset-2 focus-visible:outline-[#FFD166]" href="#inscripcion">
-         Inscríbete
-        </a>
-       </div>
-      </article>
-      <article class="overflow-hidden rounded-xl border border-[#1e7a4f] bg-white shadow-md
-             transition-shadow hover:shadow-xl dark:border-[#FFD166] dark:bg-[#1d2f45]">
-       <img alt="Recorrido nocturno en bicicleta" class="h-48 w-full object-cover" src="../img/imagen13.png"/>
-       <div class="space-y-3 p-5">
-        <span class="inline-block rounded-full bg-[#FFD166] px-3 py-1 text-sm font-semibold text-[#1d2f45]">
-         Nivel: Difícil
-        </span>
-        <h3 class="text-xl font-bold">
-         Luna en Las Palmas
-        </h3>
-        <dl class="space-y-1">
-         <div>
-          <dt class="text-sm opacity-75">
-           Distancia
-          </dt>
-          <dd class="font-semibold">
-           22 km
-          </dd>
-         </div>
-         <div>
-          <dt class="text-sm opacity-75">
-           Duración
-          </dt>
-          <dd class="font-semibold">
-           3,5 h
-          </dd>
-         </div>
-         <div>
-          <dt class="text-sm opacity-75">
-           Encuentro
-          </dt>
-          <dd class="font-semibold">
-           Sede Rueda Libre
-          </dd>
-         </div>
-        </dl>
-        <p class="text-2xl font-bold">
-         $95.000
-        </p>
-        <a class="inline-block rounded-lg bg-[#1e7a4f] px-5 py-3 font-semibold text-white
-             hover:bg-[#1d2f45] focus-visible:outline focus-visible:outline-4
-             focus-visible:outline-offset-2 focus-visible:outline-[#FFD166]" href="#inscripcion">
-         Inscríbete
-        </a>
-       </div>
-      </article>
-     </div>
-    </div>
-   </section>
-   <section class="bg-white px-5 py-14 text-[#1d2f45] dark:bg-[#1d2f45] dark:text-white" id="pasos">
-    <div class="mx-auto max-w-6xl">
-     <h2 class="mb-6 text-3xl font-bold">
-      ¿Cómo funciona?
-     </h2>
-     <ol class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-      <li class="rounded-lg border border-[#1e7a4f] p-5">
-       <strong>
-        1. Elige tu ruta
-       </strong>
-      </li>
-      <li class="rounded-lg border border-[#1e7a4f] p-5">
-       <strong>
-        2. Inscríbete
-       </strong>
-      </li>
-      <li class="rounded-lg border border-[#1e7a4f] p-5">
-       <strong>
-        3. Recoge tu equipo
-       </strong>
-      </li>
-      <li class="rounded-lg border border-[#1e7a4f] p-5">
-       <strong>
-        4. Rueda
-       </strong>
-      </li>
-     </ol>
-    </div>
-   </section>
-   <section class="bg-[#002574] px-5 py-14 text-center text-white dark:bg-[#1d2f45]" id="inscripcion">
-    <div class="mx-auto max-w-6xl">
-     <h2 class="mb-3 text-3xl font-bold">
-      ¡Vive Medellín de noche!
-     </h2>
-     <p class="mb-6">
-      Bicicleta, casco, luces LED, chaleco reflectivo y guía incluidos.
-     </p>
-     <a class="inline-block rounded-lg bg-[#FFD166] px-5 py-3 font-semibold text-[#1d2f45]
-             hover:bg-white focus-visible:outline focus-visible:outline-4
-             focus-visible:outline-[#1e7a4f]" href="../paginas/reservas.html">
-      Ir a reservas
-     </a>
-    </div>
-   </section>
-  </main>
-  <footer class="bg-[#1d2f45] px-5 py-8 text-white">
-   <div class="mx-auto grid max-w-6xl gap-6 md:grid-cols-3">
-    <div>
-     <h2 class="font-bold">
-      Rueda Libre
-     </h2>
-     <p>
-      Movilidad sostenible.
-     </p>
-    </div>
-    <div>
-     <h2 class="font-bold">
-      Contacto
-     </h2>
-     <p>
-      hola@ruedalibre.example
-     </p>
-    </div>
-    <div>
-     <h2 class="font-bold">
-      Horarios
-     </h2>
-     <p>
-      Jueves a sábado, horarios por confirmar.
-     </p>
-    </div>
-   </div>
-  </footer>
- </body>
+
+    </footer>
+
+</body>
+
 </html>
