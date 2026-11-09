@@ -1,29 +1,25 @@
-/* Rueda Libre: estilos compartidos, sencillos y reutilizables */
-/* Rueda Libre: estilos compartidos, sencillos y reutilizables */
+
+/* variables comunes de color */
+
 :root {
     --verde-ruta: #1e7a4f;
+    --verde-oscuro: #166b42;
     --naranja-pedal: #F39A2B;
     --azul-noche: #14213D;
     --crema: #FAF6EF;
-    --gris-asfalto: #1e7e4f;
-    --fondo: #FAF6EF;
-    --texto: #344354;
     --blanco: #fff;
-    --color-aux-1: #166b42;
-    --color-aux-2: #eaf5ed;
-    --color-aux-3: #f0f7ef;
-    --color-aux-4: #9aa7ac;
-    --color-aux-5: #d4dbd8;
-    --color-aux-6: #cbd5d1;
-    --color-aux-7: #104d30;
-    --color-aux-8: #edf4ef;
-    --color-aux-9: #0003;
+    --texto: #344354;
+    --borde: #d4dbd8;
+
     --espacio: 1rem;
     --radio: 8px;
-    --ancho: 68.75rem;
+    --ancho: 1100px;
+
     --fuente-texto: "Open Sans", sans-serif;
-    --fuente-titulo: Montserrat, sans-serif;
+    --fuente-titulo: "Montserrat", sans-serif;
 }
+
+/* generalidades de la pagina */
 
 * {
     box-sizing: border-box;
@@ -35,7 +31,7 @@ html {
 
 body {
     margin: 0;
-    background: var(--fondo);
+    background: var(--crema);
     color: var(--texto);
     font-family: var(--fuente-texto);
     line-height: 1.6;
@@ -43,8 +39,13 @@ body {
 
 h1, h2, h3 {
     font-family: var(--fuente-titulo);
-    line-height: 1.25;
-    color: var(--gris-asfalto);
+    color: var(--verde-ruta);
+    line-height: 1.3;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 a {
@@ -55,12 +56,20 @@ a:hover {
     text-decoration: underline;
 }
 
-a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
     outline: 3px solid var(--naranja-pedal);
     outline-offset: 2px;
 }
 
-.encabezado, main, .pie-contenedor {
+/* encabezado y navegacion */
+
+.encabezado,
+main,
+.pie-contenedor {
     max-width: var(--ancho);
     margin: auto;
     padding: 1.5rem var(--espacio);
@@ -70,8 +79,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: var(--espacio);
     flex-wrap: wrap;
+    gap: var(--espacio);
 }
 
 .marca {
@@ -80,7 +89,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 .marca h1 {
     margin: 0;
-    color: var(--verde-ruta);
 }
 
 .marca p {
@@ -96,7 +104,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 nav ul {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--espacio);
+    gap: .5rem;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -104,69 +112,180 @@ nav ul {
 
 nav a {
     display: inline-block;
-    padding: .55rem .8rem;
-    text-decoration: none;
+    padding: .6rem .8rem;
     border-radius: var(--radio);
+    text-decoration: none;
     font-weight: 600;
 }
 
-nav a:hover, nav a[aria-current="page"], nav a.activo {
+nav a:hover,
+nav a.activo,
+nav a[aria-current="page"] {
     background: var(--verde-ruta);
     color: var(--blanco);
+    text-decoration: none;
 }
+
+/* portada de index rueda libre */
 
 main > section {
     margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-radius: var(--radio);
+}
+
+main > section:nth-of-type(odd) {
+    background: var(--blanco);
 }
 
 section > h2 {
     margin-top: 0;
 }
 
-.boton, button[type="submit"] {
+.portada {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+    background: #eaf5ed;
+    border-left: 5px solid var(--verde-ruta);
+}
+
+.portada img {
+    display: block;
+    width: 100%;
+    border-radius: var(--radio);
+}
+
+/* botones de rueda libre */
+
+.boton,
+button[type="submit"] {
     display: inline-block;
+    padding: .75rem 1.1rem;
     background: var(--verde-ruta);
     color: var(--blanco);
-    border: 0;
+    border: none;
     border-radius: var(--radio);
-    padding: .75rem 1.1rem;
     font: 600 1rem var(--fuente-texto);
     text-decoration: none;
+    text-align: center;
     cursor: pointer;
-    
 }
 
-.boton:hover, button[type="submit"]:hover {
-    background: var(--gris-asfalto);
+.boton:hover,
+button[type="submit"]:hover {
+    background: var(--verde-oscuro);
     color: var(--blanco);
     text-decoration: none;
 }
 
-.cuadricula-servicios, .cuadricula-flota {
+/* servicios y rutas */
+
+.cuadricula-servicios,
+.cuadricula-rutas,
+.cuadricula-flota {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--espacio);
 }
 
-.servicio, .tarjeta-bicicleta, aside, fieldset {
+.servicio,
+.tarjeta-bicicleta,
+aside,
+fieldset {
     padding: var(--espacio);
-    border: 1px solid var(--color-aux-5);
-    border-radius: var(--radio);
     background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
 }
 
-.servicio img, .tarjeta-bicicleta img {
+.servicio,
+.tarjeta-bicicleta {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.servicio h3,
+.tarjeta-bicicleta h3 {
+    margin: 0;
+}
+
+.servicio p,
+.tarjeta-bicicleta p {
+    margin: .3rem 0;
+}
+
+.servicio img,
+.tarjeta-bicicleta img {
     display: block;
-    max-width: 100%;
     width: 100%;
     height: 180px;
     object-fit: contain;
     border-radius: var(--radio);
 }
 
-.servicio h3, .tarjeta-bicicleta h3 {
-    margin-bottom: .4rem;
+.servicio .boton,
+.tarjeta-bicicleta .boton {
+    margin-top: auto;
 }
+
+.tarjeta-bicicleta {
+    position: relative;
+}
+
+
+.etiqueta-nuevo {
+    position: absolute;
+    top: .75rem;
+    right: .75rem;
+    padding: .25rem .7rem;
+    border-radius: var(--radio);
+    background: var(--azul-noche);
+    color: var(--blanco);
+    font-weight: 700;
+}
+
+/* precentacion rueda nocturna */
+
+#rueda-nocturna {
+    text-align: center;
+    background: var(--azul-noche);
+}
+
+#rueda-nocturna h2,
+#rueda-nocturna p {
+    color: var(--blanco);
+}
+
+#rueda-nocturna .boton {
+    background: var(--naranja-pedal);
+    color: var(--azul-noche);
+}
+
+.seccion-beneficios {
+    text-align: center;
+   
+}
+
+.seccion-beneficios ul {
+    max-width: 620px;
+    margin: 1rem auto 2rem;
+    text-align: left;
+}
+
+.imagen-beneficios {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    max-height: 400px;
+    object-fit: contain;
+    margin: auto;
+    border-radius: var(--radio);
+}
+
+/* tablas */
 
 .tabla-contenedor {
     width: 100%;
@@ -174,21 +293,21 @@ section > h2 {
 }
 
 table {
-    border-collapse: collapse;
     width: 100%;
     background: var(--blanco);
 }
 
 caption {
-    font-weight: 600;
     padding: .6rem;
     text-align: left;
+    font-weight: 600;
 }
 
-th, td {
-    border: 1px solid var(--color-aux-6);
-    text-align: left;
+th,
+td {
     padding: .7rem;
+    border: 1px solid var(--borde);
+    text-align: left;
 }
 
 thead {
@@ -196,11 +315,10 @@ thead {
     color: var(--blanco);
 }
 
-thead th {
-    color: var(--blanco);
-}
+/* formularios */
 
 form {
+    width: 100%;
     max-width: 720px;
     margin: auto;
 }
@@ -210,20 +328,23 @@ fieldset {
 }
 
 legend {
-    color: var(--gris-asfalto);
+    color: var(--verde-ruta);
     font-weight: 700;
 }
 
-.campo-formulario, .campo {
+.campo-formulario,
+.campo {
     display: grid;
     gap: .35rem;
     margin-bottom: var(--espacio);
 }
 
-input:not([type="radio"]):not([type="checkbox"]), select, textarea {
+input:not([type="radio"]):not([type="checkbox"]),
+select,
+textarea {
     width: 100%;
     padding: .65rem;
-    border: 1px solid var(--color-aux-4);
+    border: 1px solid #06611d;
     border-radius: var(--radio);
     font: inherit;
 }
@@ -242,10 +363,31 @@ fieldset > label {
     font-size: .9rem;
 }
 
+.contenido-reservas {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: start;
+    gap: var(--espacio);
+}
+
+.contenido-reservas form {
+    max-width: none;
+}
+
+.contenido-reservas aside {
+    padding: 1.5rem;
+}
+
+.contenido-reservas aside h3 {
+    margin-top: 0;
+}
+
+/* horarios de atencion */
+
 dl {
     display: grid;
     grid-template-columns: max-content 1fr;
-    gap: .35rem 1rem;
+    gap: .5rem 1rem;
 }
 
 dt {
@@ -256,66 +398,51 @@ dd {
     margin: 0;
 }
 
+/* footer verde */
+
 footer {
-    background: var(--gris-asfalto);
+    background: var(--verde-ruta);
     color: var(--blanco);
 }
 
-footer h2, footer h3, footer a {
+footer h2,
+footer h3,
+footer a {
     color: var(--blanco);
 }
 
 .pie-contenedor {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
 }
 
 .derechos {
-    text-align: center;
     margin: 0;
     padding: 0 1rem 1rem;
+    text-align: center;
 }
 
-@media (max-width: 600px) {
-    .encabezado {
-        justify-content: center;
-        text-align: center;
-    }
-    nav ul {
-        justify-content: center;
-    }
-    dl {
-        grid-template-columns: 1fr;
-    }
-    dd {
-        margin-bottom: .5rem;
-    }
-}
+/* flroes animadas */
 
-
-/* Contenedor de las flores */
 .particulas {
     position: fixed;
     inset: 0;
+    overflow: hidden;
     pointer-events: none;
     z-index: 0;
-    overflow: hidden;
 }
 
-/* Estilo general */
 .flor {
     position: absolute;
-    width: clamp(220px, 8vw, 100px);
-    opacity: 0.70;
+    width: 100px;
+    opacity: .7;
     animation: flotar 8s ease-in-out infinite alternate;
 }
 
-/* Posiciones */
 .flor-1 {
     top: 10%;
     left: 5%;
-    animation-delay: 0s;
 }
 
 .flor-2 {
@@ -342,7 +469,6 @@ footer h2, footer h3, footer a {
     animation-delay: 3s;
 }
 
-/* Movimiento */
 @keyframes flotar {
     from {
         transform: translateY(0) rotate(0deg);
@@ -353,7 +479,6 @@ footer h2, footer h3, footer a {
     }
 }
 
-/* Mantener el contenido por encima */
 body > header,
 body > main,
 body > footer {
@@ -361,101 +486,90 @@ body > footer {
     z-index: 1;
 }
 
-/* Accesibilidad */
+/* boton de whatsapp */
+
+.whatsapp {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 5;
+    padding: 1rem 1rem;
+    border-radius: var(--radio);
+    background: var(--verde-ruta);
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.whatsapp:hover {
+    background: var(--verde-oscuro);
+    color: var(--blanco);
+}
+
+
+
+@media (max-width: 900px) {
+
+    .cuadricula-servicios,
+    .cuadricula-rutas,
+    .cuadricula-flota {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contenido-reservas {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .encabezado {
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+
+    .portada,
+    .cuadricula-servicios,
+    .cuadricula-rutas,
+    .cuadricula-flota,
+    .pie-contenedor {
+        grid-template-columns: 1fr;
+    }
+
+    main > section {
+        padding: 1rem;
+    }
+
+    dl {
+        grid-template-columns: 1fr;
+    }
+
+    dd {
+        margin-bottom: .5rem;
+    }
+
+    .flor {
+        width: 60px;
+    }
+
+}
+
+
 @media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
     .flor {
         animation: none;
     }
+
 }
 
-/* Mejoras finales: secciones, beneficios, promociones y accesibilidad */
-main > section {
-    padding: 1.5rem;
-    border-radius: 16px;
-}
-main > section:nth-of-type(odd) {
-    background: rgba(255, 255, 255, .76);
-}
-main > section:first-child {
-    padding: clamp(1.5rem, 4vw, 3rem);
-    background: var(--color-aux-2);
-    border-left: .35rem solid var(--verde-ruta);
-}
-.servicio, .tarjeta-bicicleta {
-    box-shadow: 0 5px 18px rgba(29, 47, 69, .08);
-    transition: transform .2s ease, box-shadow .2s ease;
-}
-.servicio:hover, .tarjeta-bicicleta:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 22px rgba(29, 47, 69, .13);
-}
-.tarjeta-bicicleta {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-}
-.tarjeta-bicicleta .boton { margin-top: auto; text-align: center; }
-.etiqueta-nuevo {
-    position: absolute;
-    top: .75rem;
-    right: .75rem;
-    padding: .25rem .7rem;
-    border-radius: 1rem;
-    background: var(--azul-noche);
-    color: var(--blanco);
-    font-weight: 700;
-    font-size: .8rem;
-}
-.seccion-beneficios {
-    padding: clamp(1.5rem, 4vw, 3rem);
-    text-align: center;
-    background: var(--color-aux-8);
-}
-.seccion-beneficios ul { text-align: left; max-width: 620px; margin: 1rem auto 2rem; }
-.seccion-beneficios .imagen-beneficios {
-    display: block;
-    width: 100%;
-    max-width: 980px;
-    height: clamp(220px, 42vw, 470px);
-    object-fit: cover;
-    object-position: center;
-    border-radius: 18px;
-    margin: auto;
-    box-shadow: 0 10px 28px rgba(29, 47, 69, .16);
-    img {max-width: 1%;}
-}
-/* Las promociones están todas visibles: esta versión no utiliza JavaScript. */
-.promociones {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
-    gap: 1rem;
-}
-.promocion {
-    display: flex;
-    flex-direction: column;
-    gap: .75rem;
-    padding: 1rem;
-    background: var(--color-aux-3);
-    border-radius: var(--radio);
-}
-.promocion img {
-    width: 100%;
-    height: 11rem;
-    object-fit: contain;
-}
-.promocion h3 { margin: 0; }
-.promocion .boton { margin-top: auto; text-align: center; }
-.whatsapp {
-    position: fixed;
-    bottom: 1rem;
-    right: 1rem;
-    z-index: 5;
-    background: var(--color-aux-1);
-    color: var(--blanco);
-    padding: .75rem 1.1rem;
-    border-radius: 999px;
-    font-weight: 700;
-    box-shadow: 0 4px 15px var(--color-aux-9);
-    text-decoration: none;
-}
-img { max-width: 70%}
