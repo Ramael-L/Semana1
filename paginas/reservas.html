@@ -88,7 +88,7 @@
                 <dt>Lunes a viernes</dt>
                 <dd>7:00 a. m. - 7:00 p. m.</dd>
 
-                <dt>Sábados y domingos</dt>
+                <dt>Sábados, domingos y festivos</dt>
                 <dd>6:00 a. m. - 2:00 p. m.</dd>
             </dl>
 
@@ -136,27 +136,30 @@
                                 required>
                         </div>
 
-                        <div class="campo-formulario">
-                            <label for="documento">Documento de identidad:</label>
-                            <input type="text"
-                                id="documento"
-                                name="documento"
-                                pattern="[0-9]{6,10}"
-                                title="Ingresa entre 6 y 10 dígitos"
-                                inputmode="numeric"
-                                required>
-                        </div>
+                        <!-- Dos campos relacionados en la misma fila -->
+                        <div class="fila-campos">
+                            <div class="campo-formulario">
+                                <label for="documento">Documento de identidad:</label>
+                                <input type="text"
+                                    id="documento"
+                                    name="documento"
+                                    pattern="[0-9]{6,10}"
+                                    title="Ingresa entre 6 y 10 dígitos"
+                                    inputmode="numeric"
+                                    required>
+                            </div>
 
-                        <div class="campo-formulario">
-                            <label for="telefono">Teléfono:</label>
-                            <input type="tel"
-                                id="telefono"
-                                name="telefono"
-                                pattern="3[0-9]{9}"
-                                title="Ingresa 10 dígitos y comienza por 3"
-                                inputmode="numeric"
-                                autocomplete="tel"
-                                required>
+                            <div class="campo-formulario">
+                                <label for="telefono">Teléfono:</label>
+                                <input type="tel"
+                                    id="telefono"
+                                    name="telefono"
+                                    pattern="3[0-9]{9}"
+                                    title="Ingresa 10 dígitos y comienza por 3"
+                                    inputmode="numeric"
+                                    autocomplete="tel"
+                                    required>
+                            </div>
                         </div>
 
                     </fieldset>
@@ -170,7 +173,7 @@
                             <input type="date"
                                 id="fecha"
                                 name="fecha"
-                                min="2026-11-08"
+                                min="2026-11-01"
                                 max="2026-12-31"
                                 required>
                         </div>
@@ -257,7 +260,7 @@
                         <label for="comentarios">Comentarios (opcional):</label>
 
                         <textarea id="comentarios"
-                            name="comentarios"
+                            name="comentarios" maxlength="300"
                             rows="4"
                             placeholder="Cuéntanos si necesitas algo especial"></textarea>
 
