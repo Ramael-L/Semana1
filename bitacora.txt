@@ -47,9 +47,9 @@ URL completa: http://127.0.0.1:3000/index.html?vscode-livepreview=true
 Protocolo: htpp
 Host: 127.0.0.1
 Puerto: 3000
-Ruta: 
-Método del documento:  
-Código de estado: 
+Ruta: index.html?vscode-livepreview=
+Método del documento:get  
+Código de estado: 200 ok
 Prueba 404: escribo una dirección que no existe, por ejemplo
 /promociones-que-no-existen.html.
 Código observado: 
@@ -337,7 +337,7 @@ El encabezado actual usa flex-wrap y mantiene visibles los enlaces;
 no los oculta en el móvil como pedía literalmente el ejercicio.
 [AJUSTE PENDIENTE] La campaña tiene un diseño OSCURO FIJO, como se
 eligió para este proyecto; no hay dos temas automático claro/oscuro.
-Contraste y aspecto nocturno en DevTools: _______correcto__________ [POR PROBAR]
+Contraste y aspecto nocturno en DevTools: _________________ [POR PROBAR]
 
 22. Formulario nocturno [HECHO EN CÓDIGO]
 Pide nombre, correo, celular, ruta, día (jueves, viernes o sábado),
@@ -359,9 +359,6 @@ Tailwind en Nocturna, porque me resulta más sencillo identificar la
 responsabilidad de cada herramienta. Las dos bibliotecas se cargan por
 CDN donde se usan. No comparo kilobytes inventados: si el profesor
 pide cifras reales, hay que medir recursos con DevTools > Network.
-
-Medición CSS/JS de Bootstrap en Network: ______ KB [POR PROBAR]
-Medición Tailwind cargado por CDN: __________ KB [POR PROBAR]
 
 ============================================================
 ENTREGA — REVISIÓN FINAL Y DEMOSTRACIÓN
