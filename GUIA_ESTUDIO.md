@@ -1,4 +1,4 @@
-# Guía breve para defender Rueda Libre
+# Guía breve de términos en  Rueda Libre
 
 **HTML** organiza el contenido; **CSS** define su apariencia; **Tailwind** ofrece clases listas para combinar.
 
