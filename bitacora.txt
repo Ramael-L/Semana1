@@ -1,34 +1,396 @@
-BITÁCORA - RUEDA LIBRE
-Noviembre de 2026
+BITÁCORA DE DESARROLLO — RUEDA LIBRE
+Versión alternativa | Riwi | Noviembre de 2026
 
-Mi proyecto es una página de alquiler de bicicletas en Medellín. La hice para practicar lo que estamos aprendiendo en Riwi y entender cómo se conectan varias páginas web.
+Proyecto: Rueda Libre, alquiler y recorridos en bicicleta por Medellín
+Autor: Ramael Gonzalez Florez
 
-VERSIÓN 0.1 - PRIMEROS PASOS
-Empecé organizando las carpetas, las imágenes y las páginas. Aprendí a usar enlaces relativos para pasar de Inicio a Tarifas y Reservas. También practiqué la estructura básica de HTML y el uso de Live Server. Con Git fui guardando los avances.
+Escribí este registro para mostrar lo que construí, las decisiones que tomé
+al programar y lo que aprendí. No quise copiar una lista de definiciones:
+prefiero explicar con ejemplos de mi propia página.
 
-VERSIÓN 0.2 - CONTENIDO Y FORMULARIOS
-Añadí los servicios, la flota, las rutas y las tablas de precios. Para organizarlas usé section, article y encabezados. En las tablas incluí caption y th para que se entiendan mejor.
+[HECHO EN CÓDIGO] = se puede comprobar al leer el proyecto.
+[AJUSTE PENDIENTE] = todavía hay una diferencia con el enunciado.
 
-En Reservas trabajé con label, input, select y fieldset. Usé required, min, max y pattern para comprobar datos desde HTML. El formulario es una demostración académica: no guarda ni envía reservas reales.
+NOTA SOBRE EL ALCANCE
+El profesor nos autorizó usar Tailwind directamente por CDN y no instalarlo
+con la CLI. También indicó que podíamos omitir la implementación completa
+de Bootstrap. En esta versión solo dejé una práctica sencilla de Bootstrap,
+por lo que no voy a presentar como realizados el carrusel, el modal,
+la compilación de Tailwind, @theme o los archivos output.css.
 
-VERSIÓN 0.3 - DISEÑO Y ADAPTACIÓN
-Organicé los estilos en un archivo CSS compartido. Usé variables para repetir colores y espacios sin escribirlos muchas veces. Flexbox me ayudó con los menús y botones, y Grid con las tarjetas, la portada y el formulario. También añadí cambios para que la página se adapte a distintos tamaños de pantalla.
+============================================================
+SEMANA 1 — DE LAS PRIMERAS PÁGINAS A UNA WEB ORDENADA
+============================================================
 
-RUEDA NOCTURNA Y PORTAFOLIO
-Creé Rueda Nocturna con Tailwind enlazado por CDN, como indicó el profesor. Conservé su diseño oscuro y preparé tres archivos: prototipo, componentes e index. El index incluye las rutas y un formulario de inscripción de prueba.
+DÍA 1. ESTRUCTURA, ENLACES Y PRIMERA VERSIÓN
 
-En el portafolio mostré mis proyectos. Para conocer lo básico de Bootstrap añadí solo una insignia en el portafolio y un aviso en Rueda Nocturna. No usamos los ejercicios completos de Bootstrap porque el profesor indicó omitirlos.
+1. Qué construí [HECHO EN CÓDIGO]
+Organicé los archivos para no mezclar páginas, estilos e imágenes:
+- index.html: portada, servicios, bicicletas y rutas.
+ - paginas/tarifas.html: precios y recorridos.
+ - paginas/reservas.html: horarios y solicitud de alquiler.
+ - css/style.css: estilos compartidos (en esta versión se llama style.css).
+ - assets/: fotografías, GIF, logo y bicicletas.
+ - nocturna/: una landing aparte, su prototipo y componentes.
+ - portafolio/: presentación del trabajo.
+ - pruebas/: ejercicio independiente de Bootstrap.
+ - bitacora.txt y README.md: documentación.
 
-LO QUE ME QUEDA POR COMPROBAR
-- Abrir todas las páginas con Live Server y revisar enlaces e imágenes.
-- Usar DevTools Network para anotar URL, host, puerto, una respuesta 200 y una prueba 404.
-- Probar el formulario con datos correctos y errores (campos vacíos, correo, documento, teléfono, fecha, cantidad y aceptación).
-- Revisar el teclado y el foco visible.
-- Comprobar cómo se ve en 360, 768, 1024 y 1280 píxeles.
-- Pasar los HTML por el validador W3C.
-- Publicar en GitHub Pages y guardar el enlace y las capturas.
+Usé <!DOCTYPE html>, lang="es", charset UTF-8, viewport, title y una
+descripción en cada página. El HTML es el contenido; CSS organiza y da
+estilo; y JavaScript se usa únicamente para mostrar un aviso de prueba
+al validar el formulario, sin guardar reservas.
 
-Al revisar los archivos no aparecieron rutas internas rotas ni identificadores duplicados, pero eso no reemplaza las pruebas en el navegador. Prefiero dejar estas comprobaciones como pendientes hasta hacerlas de verdad.
+2. Datos de Network [POR PROBAR EN LIVE SERVER]
+Abro index.html con Live Server, entro a F12 > Network y recargo.
+URL completa: http://127.0.0.1:3000/index.html?vscode-livepreview=true
+Protocolo: htpp
+Host: 127.0.0.1
+Puerto: 3000
+Ruta: 
+Método del documento:  
+Código de estado: 
+Prueba 404: escribo una dirección que no existe, por ejemplo
+/promociones-que-no-existen.html.
+Código observado: 
+Explicación: si recibo 404, el servidor no encontró ese recurso.
+No copio una URL ajena, porque mi equipo puede usar otro puerto.
 
-CONCLUSIÓN
-Con Rueda Libre practiqué cómo se complementan HTML, CSS y Tailwind. Mi idea es mantener el código sencillo para poder explicar qué hace cada parte y seguir mejorándolo mientras aprendo.
+3. Enlaces entre páginas 
+Origen                         Destino                      Ruta
+index.html                     Tarifas                      paginas/tarifas.html
+index.html                     Reservas                     paginas/reservas.html#formulario
+index.html                     Rueda Nocturna               nocturna/index.html
+index.html                     Tarifas: recorridos          paginas/tarifas.html#recorridos
+paginas/tarifas.html           Inicio                       ../index.html
+paginas/tarifas.html           Reservas                     reservas.html
+paginas/reservas.html          Tarifas                      tarifas.html#alquiler
+paginas/reservas.html          Inicio                       ../index.html
+nocturna/index.html            Inicio                       ../index.html
+nocturna/index.html            Kit de componentes           componentes.html
+
+Aprendí que ../ sirve para subir una carpeta; #formulario lleva a una
+sección de la misma página de destino. El mapa es un enlace externo y el
+botón de WhatsApp sirve para COMPARTIR el proyecto, no para escribir a
+un número real de atención.
+
+Git: hay que revisar en el repositorio real si están los commits y push
+por MiniReto. Este ZIP no guarda el historial de Git.
+
+DÍA 2. SEMÁNTICA, TABLAS Y FORMULARIO
+
+4. Mapa sencillo de las regiones [HECHO EN CÓDIGO]
+INICIO: header + nav > main (portada, servicios, flota, rutas,
+        nocturna, consejos y ubicación) > footer.
+TARIFAS: header + nav > main (tabla de alquiler, tabla de
+         recorridos, información adicional) > footer.
+RESERVAS: header + nav > main (presentación, form e información
+          complementaria) > footer.
+NOCTURNA: header + nav > main (portada, rutas, pasos, inscripción)
+          > footer.
+
+Elegí <section> para temas con título y <article> para cada tarjeta que
+se entiende por separado. <aside> contiene los horarios y recordatorios
+de Reservas. Conservo algunos <div> porque solo agrupan elementos para
+Grid y Flexbox y no representan una sección independiente. El <span>
+de la marca funciona como texto dentro del enlace y no necesita título.
+
+5. Tablas de Tarifas [HECHO EN CÓDIGO]
+Preparé dos tablas con caption, thead, tbody y th con scope.
+- Alquiler: urbana ($10.000 / $30.000 / $50.000), montaña
+  ($15.000 / $45.000 / $70.000) y eléctrica
+  ($25.000 / $70.000 / $110.000).
+- Recorridos: Río y Parques (12 km, 2 h, fácil, $45.000);
+  Sabores de Barrio (18 km, 3 h, medio, $60.000);
+  Reto Las Palmas (25 km, 4 h, difícil, $85.000).
+Las notas explican el casco y candado y qué llevar. La clase de
+contenedor con overflow-x permite desplazar solo la tabla si no cabe.
+
+6. Por qué elegí estos controles [HECHO EN CÓDIGO]
+- type="email": ayuda a detectar direcciones con formato incorrecto.
+- type="date": facilita seleccionar una fecha y limitar el rango.
+- type="radio": el plan de alquiler permite elegir una sola opción.
+También utilicé <select> para bicicleta y recorrido; <textarea> para
+comentarios; y checkbox para aceptar las condiciones.
+
+El formulario está organizado en "Tus datos", "Tu alquiler" y
+"Confirmación" con fieldset y legend. Cada campo tiene una etiqueta.
+Las reglas escritas son: nombre mínimo de 3 caracteres; documento de
+6 a 10 cifras; celular con 10 cifras comenzando por 3; correo válido;
+1 a 6 bicicletas; comentarios máximo 300; plan y aceptación obligatorios.
+La fecha actual del archivo tiene min="2026-11-12" y max="2026-12-31".
+[AJUSTE PENDIENTE] El enunciado original decía desde 2026-11-01;
+se cambió el mínimo para evitar días pasados. Debo confirmar con el
+profesor cuál de las dos reglas se evaluará.
+
+7. Registro de pruebas del formulario [POR PROBAR]
+Caso | Campo                | Dato de prueba     | Espero que ocurra          | Obtuve
+ 1   | Nombre               | vacío              | no permita enviar          | ______
+ 2   | Nombre               | "Lu"               | pida 3 caracteres         | ______
+ 3   | Documento            | "AB1234"           | rechace letras             | ______
+ 4   | Documento            | "12345"            | rechace menos de 6        | ______
+ 5   | Correo               | "hola.com"         | rechace el formato        | ______
+ 6   | Celular              | "1234567890"       | rechace inicio distinto 3 | ______
+ 7   | Celular              | "300123"           | rechace longitud          | ______
+ 8   | Cantidad             | 7                  | rechace más de 6          | ______
+ 9   | Cantidad             | 0                  | rechace menos de 1        | ______
+10   | Condiciones          | sin marcar         | no permita enviar         | ______
+11   | Comentarios          | más de 300 letras  | limite el texto           | ______
+12   | Datos correctos      | datos de prueba    | muestre aviso de demo     | ______
+
+En cada fila debo reemplazar las rayas por lo que realmente vi.
+Después haré el recorrido con Tab, Shift+Tab, flechas, Espacio y Enter:
+orden del foco: __________  ¿se ve el foco?: __________
+
+8. Revisión de accesibilidad [HECHO EN CÓDIGO / POR PROBAR]
+Decisiones que sí puedo señalar en los archivos:
+- Idioma lang="es" para indicar el idioma de lectura.
+- Un h1 y un main por archivo HTML de esta entrega.
+- Alt descriptivo en las fotos y alt vacío en el logo que acompaña
+  al nombre visible de la marca.
+- Enlaces con nombres comprensibles, como "Consultar tarifas".
+- Las etiquetas label están asociadas a sus campos mediante for e id.
+- aria-current="page" distingue el enlace del menú actual.
+- :focus-visible destaca botones, enlaces y campos en el CSS principal.
+- target="_blank" va acompañado de rel="noopener noreferrer" en
+  los enlaces externos que lo necesitan.
+
+Hallazgos y medidas de revisión (cinco como mínimo):
+1) Un logo junto al nombre puede leerse dos veces: usé alt="" cuando
+   el enlace ya incluye el nombre visible. [HECHO EN CÓDIGO]
+2) Las rutas entre carpetas se confunden fácilmente: organicé enlaces
+   relativos, no rutas de Windows. [HECHO EN CÓDIGO]
+3) Las imágenes grandes pueden sobresalir: max-width:100% y height:auto.
+   [HECHO EN CÓDIGO]
+4) Un campo sin label sería confuso: los campos del formulario tienen
+   etiquetas visibles. [HECHO EN CÓDIGO]
+5) El foco de teclado podría perderse: hay reglas focus-visible;
+   todavía debo recorrer todas las páginas y comprobarlo. [POR PROBAR]
+6) Los avisos de éxito deberían anunciarse al lector de pantalla:
+   la alerta del kit todavía no incluye role="status".
+   [AJUSTE PENDIENTE]
+
+9. Contraste y mapa de colores [CÁLCULO DEL CSS, PENDIENTE VALIDACIÓN VISUAL]
+Para no inventar valores medidos en DevTools, calculé las relaciones
+WCAG a partir de los códigos de la versión alternativa. Texto normal
+requiere 4,5:1 y texto grande 3:1.
+
+Combinación                 Relación aprox.    Evaluación
+Blanco / Verde #1E7A4F          5,31:1         apta normal
+Blanco / Naranja #E58B1B        2,61:1         no apta
+Azul / Naranja #E58B1B          6,12:1         apta normal
+Azul / Crema #FAF6EF           14,83:1         apta normal
+Texto #344354 / Crema           9,39:1         apta normal
+Verde / Crema                   4,93:1         apta normal
+Naranja / Crema                 2,42:1         no apta
+Blanco / Azul #14213D          15,97:1         apta normal
+
+Mi mapa: crema de fondo; azul oscuro para títulos; #344354 para texto;
+verde para botones con texto blanco; naranja para detalles y para botones
+con texto oscuro. El amarillo farol se usa como acento sobre fondo oscuro
+en Nocturna. El naranja de esta versión (#E58B1B) es diferente al color
+original del enunciado (#F39A2B): es una decisión visual de esta versión
+alternativa, no una medición de otro proyecto.
+
+DÍA 3. CSS, CASCADA Y PUBLICACIÓN
+
+10. Cómo organicé los estilos [HECHO EN CÓDIGO]
+El archivo css/style.css reúne variables en :root y estilos compartidos.
+Usé Montserrat para títulos y Open Sans para párrafos, ambas con fuentes
+de respaldo. Agrupé reglas para menús, botones, tarjetas, tablas,
+formularios y el pie. Evité crear clases cuando podía reutilizar una.
+
+Herencia que espero comprobar en DevTools:
+- font-family de un párrafo puede heredarse de body.
+- margin no se hereda automáticamente: el navegador o una regla propia
+  puede darle márgenes al párrafo.
+
+
+11. Especificidad que aprendí
+Un selector como #menu a pesa (1,0,1), mientras .activo pesa (0,1,0).
+Si ambas reglas intentan cambiar el mismo color, la primera gana. Por
+eso en mi CSS se usa #menu a.activo para el enlace seleccionado, sin
+!important. Compruebo con el panel Styles cuál regla queda aplicada.
+
+
+12. Modelo de caja
+Uso * { box-sizing: border-box; } para incluir padding y border
+en el ancho final. Una tarjeta deja de crecer por sorpresa cuando se
+le añade relleno. Falta anotar las medidas reales de Computed:
+
+
+13. Posicionamiento y entrega
+El enlace "Compartir por WhatsApp" se fija abajo a la derecha usando
+position:fixed. Su función es compartir, no chatear con un vendedor.
+[AJUSTE PENDIENTE] No identifiqué en el inicio alternativo una etiqueta
+"Nuevo" flotante sobre la bicicleta eléctrica; si se exige literalmente,
+hay que agregarla con position:relative/absolute.
+Publicación en GitHub Pages y URL final: ______________ [POR PROBAR]
+Commit de lanzamiento y hash: _________________________ [POR PROBAR]
+
+Resumen de la semana: empecé por organizar páginas, aprendí a conectar
+rutas, construí las tablas y el formulario y mejoré la forma de leer
+la web con CSS. Tengo que seguir practicando DevTools y Git.
+
+============================================================
+SEMANA 2 — GRID, FLEXBOX Y DISEÑO RESPONSIVE
+============================================================
+
+14. Mis decisiones de distribución [HECHO EN CÓDIGO]
+Encabezado: Flexbox. Solo necesito alinear marca y menú en una fila,
+y permitir que los enlaces bajen de línea con flex-wrap.
+Pie: Grid. Dividí marca, enlaces y horarios en tres columnas en pantallas
+grandes (aquí decidí usar Grid en lugar de Flexbox).
+Portada: Grid. Separo el texto y la ilustración en dos columnas.
+Galería de rutas: Grid. Reparto las tres tarjetas en columnas iguales.
+Reservas: Grid. El formulario ocupa 2fr y la información 1fr en escritorio.
+Fila del formulario: Grid. Documento y celular comparten fila cuando
+hay suficiente ancho.
+Flota: Grid con auto-fit y minmax para que las siete bicicletas puedan
+reorganizarse sin escribir una regla para cada modelo.
+Dentro de cada tarjeta uso Flexbox en columna para llevar el botón abajo.
+
+15. Qué espero observar al cambiar el ancho [POR PROBAR EN DEVTOOLS]
+En el CSS principal: desde 700 px cambian portada, galería y pie;
+desde 950 px el formulario y el panel lateral quedan en 2fr/1fr.
+La flota depende del espacio con auto-fit: no tiene un número fijo.
+
+Ventana      Flota (columnas reales)   Menú/pie: ¿qué cambió?
+la imagen se estiro de manera correcta
+Tres situaciones que quise evitar con el código:
+A) Menú muy ancho: flex-wrap permite saltar enlaces a otra línea.
+B) Tarjetas fuera de pantalla: Grid permite reorganizarse e imágenes
+   con max-width:100% se mantienen dentro del espacio.
+C) Tablas demasiado anchas: overflow-x:auto limita el desplazamiento
+   al contenedor de la tabla.
+En DevTools debo anotar si ocurrieron y si la solución funcionó:
+A __ocurrio____  B _________  C _________
+
+Pruebas requeridas de 360, 768 y 1280 px:
+360 px: ________paso __   768 px: __paso________  1280 px: __paso________
+[AJUSTE PENDIENTE] Los puntos de corte actuales son 700 y 950 px,
+no los 768 y 1200 px propuestos literalmente en el reto original.
+
+16. Práctica corta con Bootstrap
+El profesor permitió omitir el desarrollo completo con Bootstrap.
+Como ejercicio opcional dejé pruebas/catalogo-bootstrap.html, con
+una fila de tres tarjetas usando container, row, col, card y btn.
+No instalé menús colapsables, carrusel automático, mensajes por campo
+ni modal de políticas en las páginas principales: no voy a afirmar
+que esos MiniRetos específicos están terminados.
+
+============================================================
+SEMANA 3 — RUEDA NOCTURNA Y FRAMEWORKS
+============================================================
+
+17. Tres archivos, tres propósitos [HECHO EN CÓDIGO]
+nocturna/prototipo.html: primera portada con título, horario,
+3 rutas, precio desde $55.000 y botón de inscripción.
+nocturna/componentes.html: ejemplo de botones principal/secundario/
+contorno, tarjeta, tres tipos de alertas, correo y celular.
+nocturna/index.html: página final con rutas, pasos e inscripción.
+
+Usé Tailwind desde CDN, tal como indicó el profesor. No existen
+src/input.css ni src/output.css compilados porque esta versión no usa
+Tailwind CLI. Por lo mismo, no hay resultados de --watch, @theme,
+@apply ni --minify que pueda registrar como mediciones propias.
+
+18. Una diferencia que entendí
+Con Bootstrap un botón puede usar btn btn-success, porque el componente
+ya tiene estilos preparados. En Tailwind lo armo con utilidades como
+bg-emerald-600, px-5, py-3, rounded-lg y hover:bg-emerald-500.
+Bootstrap me sirve para avanzar rápido con componentes prediseñados;
+Tailwind me permite decidir el aspecto de cada pieza sin escribir
+muchas reglas CSS aparte.
+
+19. Reglas del kit [HECHO EN CÓDIGO]
+- Fondo azul/gris muy oscuro; tarjetas slate-800.
+- Amarillo (amber) para títulos, avisos y foco.
+- Verde esmeralda para botones principales.
+- rounded-lg / rounded-xl para redondear.
+- p-3 en campos, p-5 o p-6 en tarjetas, gap-4/gap-5 para separar.
+- hover: para indicar interacción y focus: para destacar el teclado.
+Los tonos son coherentes con esta campaña nocturna, aunque no todos
+son exactamente los HEX de la paleta del sitio principal.
+
+20. Tres rutas nocturnas [HECHO EN CÓDIGO]
+Luces del Centro: 10 km, 2 horas, fácil, $55.000.
+Miradores de la Ciudad: 16 km, 3 horas, medio, $75.000.
+Luna en Las Palmas: 22 km, 3,5 horas, difícil, $95.000.
+La landing presenta las tres tarjetas con imágenes, nivel escrito,
+punto de encuentro, precio y enlaces a la inscripción.
+Los pasos están organizados en una lista de cuatro actividades.
+Elegí Grid para distribuir varias tarjetas y varios pasos. Flexbox
+queda para alinear y envolver elementos del encabezado.
+
+21. Cómo responde el código en teoría [POR PROBAR EN PANTALLA]
+La cuadrícula de rutas usa grid + sm:grid-cols-2 + lg:grid-cols-3;
+los pasos usan sm:grid-cols-2 y lg:grid-cols-4.
+
+Ancho      Rutas previstas   Pasos previstos   Comprobación real
+360 px         1                 1             _____  1______
+768 px         2                 2             _______2____
+1024 px        3                 4             ______ 4 _____
+1280 px        3                 4             _______4____
+
+El encabezado actual usa flex-wrap y mantiene visibles los enlaces;
+no los oculta en el móvil como pedía literalmente el ejercicio.
+[AJUSTE PENDIENTE] La campaña tiene un diseño OSCURO FIJO, como se
+eligió para este proyecto; no hay dos temas automático claro/oscuro.
+Contraste y aspecto nocturno en DevTools: _______correcto__________ [POR PROBAR]
+
+22. Formulario nocturno [HECHO EN CÓDIGO]
+Pide nombre, correo, celular, ruta, día (jueves, viernes o sábado),
+acompañantes (0 a 3), experiencia, bicicleta propia y aceptación.
+Utiliza label, fieldset, legend, required, minlength, pattern, min y max.
+Si los valores son válidos, solo muestra un aviso académico: no se
+inscribe realmente a nadie.
+
+22. Comparación final de tecnologías
+
+Aspecto             Bootstrap                   Tailwind
+Aprendizaje         rápido con componentes       más clases que aprender
+Personalización     apariencia predeterminada    diseño más libre
+Tamaño de descarga  no medido en este trabajo    no medido (uso CDN)
+Uso recomendado     maquetas y componentes       una landing con estilo propio
+
+Para esta versión mantendría CSS propio en las páginas principales y
+Tailwind en Nocturna, porque me resulta más sencillo identificar la
+responsabilidad de cada herramienta. Las dos bibliotecas se cargan por
+CDN donde se usan. No comparo kilobytes inventados: si el profesor
+pide cifras reales, hay que medir recursos con DevTools > Network.
+
+Medición CSS/JS de Bootstrap en Network: ______ KB [POR PROBAR]
+Medición Tailwind cargado por CDN: __________ KB [POR PROBAR]
+
+============================================================
+ENTREGA — REVISIÓN FINAL Y DEMOSTRACIÓN
+============================================================
+
+23. Lista de control antes de entregar
+[HECHO EN CÓDIGO] Ocho HTML con un h1 y un main por archivo.
+[HECHO EN CÓDIGO] El análisis anterior comprobó 80 referencias
+locales sin encontrar rutas a archivos inexistentes.
+[HECHO EN CÓDIGO] Tres páginas principales conectadas y sección nocturna.
+[HECHO EN CÓDIGO] Dos tablas accesibles y dos formularios de prueba.
+[HECHO EN CÓDIGO] Reglas responsive y foco visible declarados.
+
+25. Guion corto de la demo
+0:00–0:40  Explico el negocio y enseño la portada.
+0:40–1:25  Visito tarifas, rutas y el formulario de Reservas.
+1:25–2:15  Abro Rueda Nocturna y pruebo sus componentes e inscripción.
+2:15–3:00  Cambio a vista móvil y explico dos decisiones:
+           usar Grid para las tarjetas y validar datos con HTML.
+
+26. Lo que me llevo de este proyecto
+Antes pensaba que hacer una página era principalmente acomodar elementos.
+Ahora entiendo mejor que primero debo ordenar la información con HTML,
+después decidir la distribución con CSS y, por último, probar que sea
+usable. Todavía necesito practicar DevTools, la publicación y algunas
+reglas de accesibilidad. Mi objetivo es explicar por qué elegí cada
+etiqueta y cada estilo, no memorizar código que no comprendo.
+
+FIN DE LA BITÁCORA
+IMPORTANTE: Los espacios pendientes se completan con resultados propios.
+Dejar un resultado en blanco es más correcto que atribuirse pruebas
+que todavía no se han realizado.
